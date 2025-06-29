@@ -19,5 +19,8 @@ function greet() {
     document.body.style.backgroundColor = "#edededff"
 }
 
+let inputVal = prompt('Enter U name')
+alert(inputVal)
+
 
 
