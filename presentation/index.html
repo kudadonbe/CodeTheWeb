@@ -7,7 +7,7 @@
     body {
       font-family: sans-serif;
       background: #222;
-      color: white;
+      /* color: rgb(0, 0, 0); */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -16,10 +16,11 @@
       margin: 0;
     }
     .slide {
-      max-width: 800px;
+      width: 95vw;
+      height: 80vh;
       text-align: center;
       padding: 2rem;
-      background: #333;
+      background: #e1dada;
       border-radius: 12px;
     }
     .nav-buttons {
@@ -39,8 +40,8 @@
   </div>
 
   <div class="nav-buttons">
-    <button onclick="prevSlide()">⬅️ Back</button>
-    <button onclick="nextSlide()">Next ➡️</button>
+    <button onclick="prevSlide()">Back</button>
+    <button onclick="nextSlide()">Next</button>
   </div>
 
   <script src="slides.js"></script>
