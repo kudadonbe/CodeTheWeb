@@ -1,10 +1,10 @@
 ### **Slide 1: Title Slide**
 
 **🏫 Code the Web – Class 3**
-**Store and Use Info**
+**Store and Use Logic**
 
 > 🔹 Learn how to store user input
-> 🔹 Use if/else to respond based on name or age
+> 🔹 Use if/else to respond
 > 🔹 Let’s make web pages interactive!
 
 ---

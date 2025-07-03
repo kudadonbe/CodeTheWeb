@@ -1,18 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutoril</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="card">
         <img src="kudadonbe.png" alt="">
         <h1 id="name">Your Name</h1>
         <p id="bio">Bio Info</p>
-        <button onclick="greet()" >Load</button>
+        <button onclick="greet()">Load</button>
     </div>
-<script src="script.js"></script> 
+
+
+
+    <h2 id="greeting">Welcome!</h2>
+    <button onclick="personalGreet()">Greet Me</button>
+
+    <script>
+        function personalGreet() {
+            let name = prompt("What is your name?");
+            if (name === "Husen") {
+                document.getElementById("greeting").innerText = "Hello, Teacher Husen!";
+            } else {
+                document.getElementById("greeting").innerText = "Hello, " + name + "!";
+            }
+        }
+    </script>
+
+    <script src="script.js"></script>
 </body>
+
 </html>

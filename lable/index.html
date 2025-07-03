@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>53 Name Labels</title>
+<style>
+/* ----------  PRINT SETTINGS (A4)  ---------- */
+@page { size: A4 landscape; margin: 10mm; }
+body   { margin: 0; font-family: sans-serif; }
+
+/* ----------  LABEL LAYOUT  ---------- */
+#labels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4mm;                       /* space between labels */
+}
+
+.label {
+  flex: 0 0 calc(25% - 4mm);      /* 4 labels per row */
+  box-sizing: border-box;
+  padding: 3mm 5mm;
+  border-radius: 2mm;
+  font-size: 10pt;
+  text-align: center;
+  line-height: 1.2;
+  color: #000;                    /* black text for readability */
+  break-inside: avoid;
+}
+</style>
+</head>
+<body>
+
+<!-- JS will fill this -->
+<div id="labels"></div>
+
+<script>
+/* ----------  LIST OF 53 NAMES  ---------- */
+const names = [
+  "Mohamed Luthufee","Samira Mohamed","Mohamed Ihsan","Ashfaq Adam","Thaha Zubair",
+  "Zahira Saeed","Minna Hamza","Zameer Abdul Kareem","Hussain Jinah","Aminath Inaza",
+  "Nazla Abdul Aleem","Mohamed Wasif","Asiyath Fazna","Moonisa Mohamed",
+  "Arsha Rasheed Abdul Rasheed","Jeen Merlin Jose","Vijin Rajaian","Niyaza Mohamed Rasheed",
+  "Asiya Abdul Ghafoor","Nasma Abdul Razzaq","Mariyam Siyada","Zamla Mohamed",
+  "Aishath Falihath","Nafiz Ibrahim","Shazna Ali Rameez","Aminath Siyaada","Hassan Adam",
+  "Fathimath Hudhuna","Mariyam Rifaa","Nahida Mohamed","Rashidha Mohamed","Riasa Abdul Wadood",
+  "Mohamed Waheed","Fathimath Sajida","Mariyam Waheedha","Ifasa Ahmed","Nadheema Mohamed",
+  "Aminath Shiyama","Naseema Ibrahim","Maumoona Mohamed","Azeeza Hassan","Maryam Ameera",
+  "Aminath Abdulla","Fathimath Hassan","Arul Sujan Benjamin","Sheethal Ramdas","Santhi Raj Bibin",
+  "Noorjahan Nalakam Veedu","Azeema Hussain","Shilpa Saji","Hussain Shareef","Azma Jaufar",
+  "Natasha Antony"
+];
+
+/* ----------  GENERATE 53 HSL COLOURS  ---------- */
+const colours = [];
+for (let i = 0; i < 53; i++) {
+  const hue = Math.floor((i * 360) / 53);          // evenly spread
+  colours.push(`hsl(${hue}, 30%, 80%)`);
+}
+
+/* ----------  INJECT CSS RULES FOR COLOURS  ---------- */
+const style = document.createElement('style');
+colours.forEach((c, i) => {
+  style.textContent += `.label:nth-child(${i + 1}){background-color:${c};}\n`;
+});
+document.head.appendChild(style);
+
+/* ----------  BUILD LABEL ELEMENTS  ---------- */
+const container = document.getElementById('labels');
+names.forEach(name => {
+  const span = document.createElement('span');
+  span.className = 'label';
+  span.textContent = name;
+  container.appendChild(span);
+});
+</script>
+</body>
+</html>

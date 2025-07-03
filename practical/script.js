@@ -23,4 +23,23 @@ let inputVal = prompt('Enter U name')
 alert(inputVal)
 
 
+let name = "Ali";
+
+console.log(name);
+
+if (name === "Husen") {
+  // special message
+} else {
+  // general greeting
+}
+
+
+let age = prompt("How old are you?");
+if (age >= 18) {
+  alert("You are old enough!");
+} else {
+  alert("You're still young!");
+}
+
+
 
