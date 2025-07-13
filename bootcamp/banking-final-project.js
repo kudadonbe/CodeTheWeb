@@ -1,92 +1,8 @@
-// banking-fundamentals-template.js
-// Purpose: One-day lesson plan to teach JavaScript fundamentals through a banking scenario
+// banking-final-project-v2.js
+// Purpose: Full JavaScript banking system using bank-based structure
 // Author: KD (Kudadonbe)
-// Date: 
+// Date:
 
-/* -------------------------------------------------
-STEP-BY-STEP FUNDAMENTALS
-------------------------------------------------- */
-
-// ===== 1. Variables =====
-let accountName = "Hussain Adam";           // String
-let accountBalance = 10000;                 // Number
-
-// ===== 2. Data Types =====
-let accNumber = "7770000001290";            // String
-let depositAmount = 200;                    // Number
-let isActive = true;                        // Boolean
-let lastTxn = null;                         // Null
-let pendingAmount;                          // Undefined
-
-console.log(accountName, accNumber, depositAmount, isActive, lastTxn, pendingAmount);
-
-// ===== 3. Arrays =====
-let transactions = [10000, -200, 300];
-console.log("Transactions:", transactions);
-
-// ===== 4. Objects =====
-let account = {
-    accountNumber: accNumber,
-    accountName: accountName,
-    balance: accountBalance,
-    currency: "MVR",
-    transactions: [],
-    status: isActive
-};
-console.log(account);
-
-// ===== 5. Loops =====
-for (let i = 0; i < transactions.length; i++) {
-    console.log(`Transaction ${i + 1}: ${transactions[i]}`);
-}
-
-// ===== 6. Conditionals =====
-if (depositAmount > 0) {
-    console.log("Valid deposit.");
-} else {
-    console.log("Invalid deposit.");
-}
-
-// ===== 7. Functions =====
-// Simple deposit function
-function depositSimple(accountObj, amount) {
-    if (amount > 0) {
-        accountObj.balance += amount;
-        console.log("Deposited " + amount + " to " + accountObj.accountName);
-    }
-}
-depositSimple(account, 300);
-
-// ===== 8. Template Literals & Formatting =====
-function formatAmount(amount) {
-    return amount.toFixed(2);
-}
-
-function printDepositSlip(accountObj, amount) {
-    console.log(`\n--- Deposit Slip ---`);
-    console.log(`Account: ${accountObj.accountNumber}`);
-    console.log(`Name: ${accountObj.accountName}`);
-    console.log(`Amount: ${accountObj.currency} ${formatAmount(amount)}`);
-    console.log(`New Balance: ${accountObj.currency} ${formatAmount(accountObj.balance)}\n`);
-}
-printDepositSlip(account, 300);
-
-let label = "Account:";
-let value = "7770000001290";
-console.log(label.padEnd(12) + value);
-
-// Sample line formatting
-let dr = "200.00";
-let cr = "";
-let balance = "9800.00";
-console.log("Date        | Details                  |    Dr    |   Cr    | Balance");
-console.log("2025-07-13  | Deposit                  |" + dr.padStart(9) + " |" + cr.padStart(8) + " | " + balance.padStart(8));
-
-/* -------------------------------------------------
-BONUS: FULL BANKING SYSTEM (Advanced Logic)
-------------------------------------------------- */
-
-// Bank system structure
 let banks = [];
 
 function createBank(bankName) {
@@ -255,7 +171,7 @@ function printBalance(bankName, accNumber) {
     }
 }
 
-// Sample demo use
+// --- DEMO ---
 createBank("BML");
 createBank("MIB");
 createBank("HSBC");
@@ -270,5 +186,13 @@ deposit("MIB", "1111000000101", 300);
 transfer("MIB", "1111000000101", "BML", "7770000001290", 300);
 transfer("BML", "7770000001290", "BML", "7770000001291", 300);
 
-// printMiniStatement("BML", "7770000001290");
-// printBalance("MIB", "1111000000101");
+// Uncomment to see results
+/*
+printBalance("BML", "7770000001290");
+printBalance("BML", "7770000001291");
+printBalance("MIB", "1111000000101");
+
+printMiniStatement("BML", "7770000001290");
+printMiniStatement("BML", "7770000001291");
+printMiniStatement("MIB", "1111000000101");
+*/
