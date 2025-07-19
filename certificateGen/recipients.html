@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Recipients – Certificate Generator</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header>
+    <div style="display: flex; align-items: center;">
+      <img src="images/logo.png" alt="Academy Logo" />
+      <span><strong>Sumeyku Academy</strong> – Certificate Generator</span>
+    </div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="recipients.html">Recipients</a>
+      <a href="print.html">Print</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="form-wrapper">
+      <div class="form-center">
+        <h2>Add Certificate Recipient</h2>
+        <fieldset>
+          <legend id="legend-text">Recipient Information</legend>
+          <select id="lang">
+            <option value="en">English</option>
+            <option value="dv">ދިވެހި</option>
+          </select>
+          <input id="title" placeholder="Title (Mr., Dr., etc.)" />
+          <input id="name" placeholder="Full Name" />
+          <input id="desig" placeholder="Designation" />
+          <input id="org" placeholder="Organization" />
+          <input id="duration" placeholder="Course Duration" />
+          <input id="date" placeholder="Certificate Date" />
+          <button onclick="saveRecipient()" id="saveBtn">Save</button>
+        </fieldset>
+      </div>
+    </div>
+
+    <h2>English</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Designation</th>
+          <th>Organization</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="table-en"></tbody>
+    </table>
+
+    <h2 class="dv">ދިވެހި</h2>
+    <table class="dv">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>ނަން</th>
+          <th>މަގާމު</th>
+          <th>އޮފީސް</th>
+          <th>އުނި އިތުރު</th>
+        </tr>
+      </thead>
+      <tbody id="table-dv"></tbody>
+    </table>
+
+
+    <div id="previewArea">
+      <h2>Live Preview</h2>
+      <div id="output"></div>
+    </div>
+
+    <!-- Certificate Templates -->
+
+    <!-- English Certificate Template -->
+    <template id="certificate-en">
+      <div class="certificate">
+        <div class="certificate-bg"></div> <!-- Add this line -->
+        <div class="left">
+          <div class="academy">
+            <img src="images/academy-org.png" alt="Sumeyku Academy Logo" class="academy-logo" />
+          </div>
+
+          <div class="title">Certificate of Completion</div>
+          <div class="subtitle">This is awarded to</div>
+          <div class="name"></div>
+          <div class="desig"></div>
+          <div class="org"></div>
+          <div class="desc">
+            For successfully completing the course:<br />
+            <strong>Foundations of Programming through Web Technologies</strong>
+          </div>
+          <div class="duration"></div>
+          <div class="footer">
+            <div class="date"></div>
+            <div class="sign">KD – Instructor</div>
+          </div>
+        </div>
+        <div class="badge-container">
+          <img src="images/aword.png" alt="Certificate Badge" class="badge-img" />
+        </div>
+
+      </div>
+    </template>
+
+    <!-- Dhivehi Certificate Template -->
+    <template id="certificate-dv">
+      <div class="certificate dv">
+        <div class="certificate-bg"></div> <!-- Add this line -->
+        <div class="left">
+          <div class="academy">
+            <img src="images/academy-org.png" alt="Sumeyku Academy Logo" class="academy-logo" />
+          </div>
+          <div class="title">ސެޓްފިކެޓް އޮފް ކޮމްޕްލީޝަން</div>
+          <div class="subtitle">މި ސެޓްފިކެޓް ދެވިފައި މިވަނީ</div>
+          <div class="name"></div>
+          <div class="desig"></div>
+          <div class="org"></div>
+          <div class="desc">
+            މި ޕްރޮގްރާމްގައި ބައިވެރިވެ،
+            <br />
+            <strong>ކޮމްޕިއުޓަރ ޕްރޮގްރާމިންގެ އަސާސްތައް، ވެބް ޓެކްނޮލޮޖީ އާއެއު</strong>
+
+            ދަސްކޮށް، ކޯސް ފުރިހަމަކޮއްފައި ވާތީއެވެ.
+          </div>
+          <div class="duration"></div>
+          <div class="footer">
+            <div class="date"></div>
+            <div class="sign">ކޭޑީ – އިންސްޓްރަކްޓަރު</div>
+          </div>
+        </div>
+        <div class="badge-container">
+          <img src="images/aword.png" alt="Certificate Badge" class="badge-img" />
+        </div>
+
+      </div>
+    </template>
+
+    <footer>
+      Made by KD &middot; Sumeyku Academy &copy; 2025
+    </footer>
+
+  </main>
+
+  <script src="data.js"></script>
+  <script src="recipients.js"></script>
+</body>
+
+</html>
