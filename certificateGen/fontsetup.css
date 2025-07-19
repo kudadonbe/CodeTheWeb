@@ -1,0 +1,89 @@
+/* ===========================================
+   FONT FACE SETUP FOR DHIVEHI FONTS
+   =========================================== */
+
+/* AK Veli Family */
+@font-face {
+  font-family: 'AK Veli';
+  src: url('fonts/AKVeli-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AK Veli';
+  src: url('fonts/AKVeli-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'AK Veli';
+  src: url('fonts/AKVeli-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Faruma */
+@font-face {
+  font-family: 'Faruma';
+  src: url('fonts/Faruma.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Maumoon */
+@font-face {
+  font-family: 'Maumoon';
+  src: url('fonts/Maumoon.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Mv Typewriter */
+@font-face {
+  font-family: 'Mv Typewriter';
+  src: url('fonts/mvtyper.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Mvutheemu Regular & Bold */
+@font-face {
+  font-family: 'Mvutheemu';
+  src: url('fonts/mvutheemuREGULAR.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mvutheemu';
+  src: url('fonts/mvutheemuBOLD.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Mv MAG Round Family */
+@font-face {
+  font-family: 'Mv MAG Round';
+  src: url('fonts/Mv_MAG_Round_Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mv MAG Round';
+  src: url('fonts/Mv_MAG_Round_HBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Mv MAG Round';
+  src: url('fonts/Mv_MAG_Round_XBold.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* A Bismillah (if used) */
+@font-face {
+  font-family: 'A Bismillah';
+  src: url('fonts/A_Bismillah.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
