@@ -4,7 +4,9 @@
 <head>
   <meta charset="UTF-8" />
   <title>Recipients – Certificate Generator</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="data/data.js" defer></script>
+  <script src="js/recipients.js" defer></script>
 </head>
 
 <body>
@@ -22,62 +24,72 @@
 
   <main>
 
-    <div class="form-wrapper">
-      <div class="form-center">
-        <h2>Add Certificate Recipient</h2>
-        <fieldset>
-          <legend id="legend-text">Recipient Information</legend>
-          <select id="lang">
-            <option value="en">English</option>
-            <option value="dv">ދިވެހި</option>
-          </select>
-          <input id="title" placeholder="Title (Mr., Dr., etc.)" />
-          <input id="name" placeholder="Full Name" />
-          <input id="desig" placeholder="Designation" />
-          <input id="org" placeholder="Organization" />
-          <input id="duration" placeholder="Course Duration" />
-          <input id="date" placeholder="Certificate Date" />
-          <button onclick="saveRecipient()" id="saveBtn">Save</button>
-        </fieldset>
+    <div class="form-preview-row">
+      <div class="form-wrapper">
+        <div class="form-center">
+          <h2 id="formHeading" style="text-align: center;">Certificate Recipient</h2>
+          <fieldset>
+            <legend id="legend-text">Recipient Information</legend>
+            <select id="lang">
+              <option value="en">English</option>
+              <option value="dv">ދިވެހި</option>
+            </select>
+            <input id="title" placeholder="Title (Mr., Dr., etc.)" />
+            <input id="name" placeholder="Full Name" />
+            <input id="desig" placeholder="Designation" />
+            <input id="org" placeholder="Organization" />
+            <input id="duration" placeholder="Course Duration" />
+            <input id="date" placeholder="Certificate Date" />
+            <button onclick="saveRecipient()" id="saveBtn">Save</button>
+          </fieldset>
+        </div>
+      </div>
+      <div id="previewArea">
+        <h2>Preview</h2>
+        <div style="height: 100%; overflow: auto;">
+          <div class="preview-scale-wrapper">
+            <div id="output">
+              <p class="preview-placeholder">Preview will appear here</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <h2>English</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>Name</th>
-          <th>Designation</th>
-          <th>Organization</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody id="table-en"></tbody>
-    </table>
-
-    <h2 class="dv">ދިވެހި</h2>
-    <table class="dv">
-      <thead>
-        <tr>
-          <th>#</th>
-          <th>ނަން</th>
-          <th>މަގާމު</th>
-          <th>އޮފީސް</th>
-          <th>އުނި އިތުރު</th>
-        </tr>
-      </thead>
-      <tbody id="table-dv"></tbody>
-    </table>
-
-
-    <div id="previewArea">
-      <h2>Live Preview</h2>
-      <div id="output"></div>
+    <div class="row">
+      <div class="col">
+        <h2>English</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Designation</th>
+              <th>Organization</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="table-en"></tbody>
+        </table>
+      </div>
+      <div class=" col dv">
+        <h2>ދިވެހި</h2>
+        <table class="dv">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>ނަން</th>
+              <th>މަގާމު</th>
+              <th>އޮފީސް</th>
+              <th>އުނި އިތުރު</th>
+            </tr>
+          </thead>
+          <tbody id="table-dv"></tbody>
+        </table>
+      </div>
     </div>
 
     <!-- Certificate Templates -->
-
     <!-- English Certificate Template -->
     <template id="certificate-en">
       <div class="certificate">
@@ -108,7 +120,6 @@
 
       </div>
     </template>
-
     <!-- Dhivehi Certificate Template -->
     <template id="certificate-dv">
       <div class="certificate dv">
@@ -142,14 +153,11 @@
       </div>
     </template>
 
-    <footer>
-      Made by KD &middot; Sumeyku Academy &copy; 2025
-    </footer>
-
   </main>
+  <footer>
+    Made by KD &middot; Sumeyku Academy &copy; 2025
+  </footer>
 
-  <script src="data.js"></script>
-  <script src="recipients.js"></script>
 </body>
 
 </html>

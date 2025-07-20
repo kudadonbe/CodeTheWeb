@@ -1,29 +1,44 @@
 /* ===========================================
-   1. GLOBAL RESET & LAYOUT
+   0. FONT IMPORTS
+   =========================================== */
+@import url('../fonts/fontsetup.css');  /* Custom fonts for certificate */
+
+
+/* ===========================================
+   1. GLOBAL RESET & BASE LAYOUT
    =========================================== */
 html, body {
   height: 100%;
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  padding: 0;
   display: flex;
   flex-direction: column;
+  font-family: 'Segoe UI', sans-serif;
 }
 
 main {
   flex: 1;
-  padding: 20px;
+  padding: 50px;
+}
+
+h2 {
+  color: #2c3e50;
 }
 
 
 /* ===========================================
    2. HEADER & FOOTER
    =========================================== */
+
 header, footer {
   background-color: #003e6a;
   color: white;
   padding: 12px 20px;
   display: flex;
   align-items: center;
+}
+
+header {
   justify-content: space-between;
 }
 
@@ -51,6 +66,7 @@ footer {
   justify-content: center;
   font-size: 14px;
   margin-top: 40px;
+  flex-shrink: 0;
 }
 
 
@@ -107,31 +123,36 @@ body.home {
 
 
 /* ===========================================
-   4. HEADINGS
+   4. FORM + PREVIEW LAYOUT
    =========================================== */
-h2 {
-  color: #2c3e50;
+.form-preview-row {
+  display: flex;
+  gap: 40px;
+  align-items: stretch;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  height: 560px;
 }
 
-
-/* ===========================================
-   5. FORM CENTERING & INPUTS
-   =========================================== */
 .form-wrapper {
-  width: 100%;
+  flex: 1 1 50%;
   display: flex;
   justify-content: center;
-  margin-bottom: 40px;
+  height: 100%;
 }
 
 .form-center {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background: #ffffff;
   border: 1px solid #ccc;
   padding: 30px 40px;
   border-radius: 8px;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
-  width: 100%;
+  min-width: 300px;
+  max-width: 700px;
   box-sizing: border-box;
 }
 
@@ -151,17 +172,23 @@ legend {
   color: #00448d;
 }
 
-fieldset input,
-fieldset select,
 input,
-select {
+select,
+fieldset input,
+fieldset select {
   display: block;
-  padding: 8px;
   width: 100%;
   max-width: 300px;
+  min-width: 300px;
+  height: 38px;
+  padding: 8px 10px;
   font-size: 14px;
+  font-family: inherit;
   border: 1px solid #ccc;
   border-radius: 4px;
+  box-sizing: border-box;
+  appearance: none;
+  background-color: white;
 }
 
 button,
@@ -181,12 +208,53 @@ button:hover {
 
 
 /* ===========================================
+   5. PREVIEW AREA
+   =========================================== */
+#previewArea {
+  flex: 1 1 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.preview-scale-wrapper {
+  width: 1000px;
+  height: 700px;
+  transform: scale(0.6);
+  transform-origin: top left;
+  pointer-events: none;
+  user-select: none;
+}
+
+#output {
+  /* width: 1000px; */
+  /* height: 700px; */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+}
+
+#output:empty::before {
+  content: "Preview will appear here";
+  opacity: 0.4;
+  font-style: italic;
+  display: block;
+  padding: 40px;
+}
+
+
+/* ===========================================
    6. TABLE STYLES
    =========================================== */
 table {
   border-collapse: collapse;
   width: 100%;
-  background: white;
+  background-color: #fff;
 }
 
 th, td {
@@ -234,9 +302,9 @@ tr:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('images/logo.png') no-repeat center center;
+  background: url('../images/logo.png') no-repeat center center;
   background-size: 100% auto;
-  opacity: 0.05;
+  opacity: 0.07;
   z-index: 0;
   pointer-events: none;
 }
@@ -263,10 +331,14 @@ tr:hover {
   font-size: 32px;
   font-weight: bold;
   margin-bottom: 20px;
-  font-family: "Arial Black", "AK Veli", Helvetica, sans-serif;
+  font-family: "Arial Black", "AK Veli Web", Helvetica, sans-serif;
 }
 
-.subtitle {
+.subtitle,
+.desig,
+.org,
+.duration,
+.desc {
   font-size: 16px;
   margin-bottom: 10px;
 }
@@ -277,14 +349,7 @@ tr:hover {
   margin-bottom: 8px;
 }
 
-.desig,
-.org {
-  font-size: 16px;
-  margin-bottom: 4px;
-}
-
 .desc {
-  font-size: 16px;
   line-height: 1.5;
   margin: 30px 0;
   max-width: 95%;
@@ -298,12 +363,6 @@ tr:hover {
 .cert-footer .sign {
   font-size: 14px;
   margin-top: 6px;
-}
-
-.duration {
-  font-size: 15px;
-  margin-bottom: 10px;
-  font-style: italic;
 }
 
 .badge-container {
@@ -324,48 +383,55 @@ tr:hover {
 /* ===========================================
    8. RTL / DHIVEHI STYLES
    =========================================== */
-.dv {
-  direction: rtl;
-  text-align: right;
-  font-family: 'Mv Typewriter', 'Faruma', sans-serif;
-}
-
+.dv,
 table.dv {
   direction: rtl;
   text-align: right;
-  font-family: 'Mv Typewriter', 'Faruma', sans-serif;
+  font-family: 'Mv Utheemu Web', 'Mv Typewriter Web', 'Faruma', sans-serif;
 }
 
 table.dv td,
 table.dv th {
-  direction: rtl;
-  text-align: right;
   font-family: inherit;
 }
 
 
 /* ===========================================
-   9. PREVIEW AREA
-   =========================================== */
-#previewArea {
-  margin-top: 40px;
-}
-
-
-/* ===========================================
-   10. PRINT STYLES
+   9. PRINT STYLES
    =========================================== */
 @media print {
   header, footer {
     display: none;
   }
 
+  body {
+    padding: 0;
+  }
+
   .certificate {
     margin: 0;
     page-break-after: always;
   }
+}
 
-  body {
-    padding: 0;
-  }
+
+/* ===========================================
+   10. UTILITY LAYOUT CLASSES
+   =========================================== */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.row > div {
+  flex: 1 1 0;
+  min-width: 300px;
+}
+
+.col {
+  flex: 1 1 45%;
+  min-width: 300px;
 }

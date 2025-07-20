@@ -1,3 +1,4 @@
+
 // Global recipients list
 let recipients = [];
 
@@ -158,22 +159,27 @@ langInput.addEventListener("change", updateLanguageMode);
 
 function updateLanguageMode() {
   const fieldset = document.querySelector("fieldset");
+  const formWrapper = document.querySelector(".form-wrapper");
+  const formHeading = document.getElementById("formHeading");
   const legend = document.getElementById("legend-text");
   const isDhivehi = langInput.value === "dv";
 
-  // Apply or remove .dv class
-  if (isDhivehi) {
-    fieldset.classList.add("dv");
-  } else {
-    fieldset.classList.remove("dv");
-  }
+  // Set RTL/LTR direction on form-wrapper only
 
+   // Apply or remove .dv class on form-wrapper
+  if (isDhivehi) {
+    formWrapper.classList.add("dv");
+  } else {
+    formWrapper.classList.remove("dv");
+  }
+  
+  formHeading.innerText = isDhivehi ? "ސެޓްފިކެޓް ލިބެންޖެހޭ ފަރާތްތައް" : "Certificate Recipient"
   // Update placeholders to match selected language
   legend.innerText = isDhivehi ? "ބައިވެރިންގެ މަޢުލޫމާތު" : "Recipient Information";
-  titleInput.placeholder = isDhivehi ? "ޑރ، އަލްފާޟިލް" : "Title (Mr., Dr., etc.)";
+  titleInput.placeholder = isDhivehi ? "އަލްފާޟިލް، އަލްފާޟިލާ، ޑރ." : "Title (Mr., Dr., etc.)";
   nameInput.placeholder = isDhivehi ? "ފުރިހަމަނަން" : "Full Name";
-  desigInput.placeholder = isDhivehi ? "ހިސާބު ޓީޗަރު" : "Designation";
-  orgInput.placeholder = isDhivehi ? "ސްކޫލްގެ ނަން" : "Organization";
+  desigInput.placeholder = isDhivehi ? "މަޤާމު، އަދާކުރާ ވަޒީފާ، އެޑްރެސް" : "Designation";
+  orgInput.placeholder = isDhivehi ? "ވަޒީފާ އަދާކުރާތަން، ނުވަތަ އަތޮޅާއި ރަށް" : "Organization";
   durationInput.placeholder = isDhivehi ? "ކޯހުގެ މުއްދަތު" : "Course Duration";
   dateInput.placeholder = isDhivehi ? "ސެޓްފިކެޓުގެ ތާރީޚު" : "Certificate Date";
   saveBtn.textContent = isDhivehi ? "ރައްކާކުރޭ" : "Save";
