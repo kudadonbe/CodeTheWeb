@@ -1,7 +1,14 @@
-### **Slide 1: Title Slide**
+---
 
-**🏫 Code the Web – Class 7**
-**Show/Hide Tricks + Visual Logic**
+marp: true
+theme: uncover
+class: invert
+paginate: true
+--------------
+
+# 🏫 Code the Web – Class 7
+
+## Show/Hide Tricks + Visual Logic
 
 > 🎯 Make things appear or disappear with a click
 > 🧠 Use booleans to control the interface
@@ -9,9 +16,7 @@
 
 ---
 
-### **Slide 2: Session Goal**
-
-**🎯 What You’ll Learn Today**
+## 🎯 What You’ll Learn Today
 
 * Show/hide page elements using JavaScript
 * Use **booleans** to track state
@@ -20,9 +25,7 @@
 
 ---
 
-### **Slide 3: Class Overview**
-
-**🧑‍🏫 Class Plan**
+## 🧑‍🏫 Class Plan
 
 | Section      | Description                              |
 | ------------ | ---------------------------------------- |
@@ -33,9 +36,7 @@
 
 ---
 
-### **Slide 4: Key Concepts**
-
-**📖 Concepts You’ll Use**
+## 📖 Concepts You’ll Use
 
 | Concept         | Description                                  |
 | --------------- | -------------------------------------------- |
@@ -46,9 +47,7 @@
 
 ---
 
-### **Slide 5: Recap Class 6**
-
-**🔁 Review Questions**
+## 🔁 Review Questions
 
 * What is an array used for?
 * What does `.push()` do?
@@ -56,9 +55,7 @@
 
 ---
 
-### **Slide 6: What Is Visibility?**
-
-**👁️ Hide and Show with CSS + JS**
+## 👁️ Hide and Show with CSS + JS
 
 * HTML elements can be hidden using:
 
@@ -76,9 +73,7 @@ Use this to **control what’s shown**!
 
 ---
 
-### **Slide 7: Secret Revealer (Demo 1)**
-
-**🛠️ Basic Show Logic**
+## 🛠️ Basic Show Logic
 
 ```html
 <p id="secret" style="display: none;">🕵️ Secret Message</p>
@@ -95,9 +90,7 @@ function revealSecret() {
 
 ---
 
-### **Slide 8: Toggle Version (Demo 2)**
-
-**🔁 Toggle with Boolean**
+## 🔁 Toggle with Boolean
 
 ```html
 <p id="secret">🕵️ Secret Message</p>
@@ -120,9 +113,7 @@ function toggleSecret() {
 
 ---
 
-### **Slide 9: Challenge – Show the Answer**
-
-**🧪 Mini Project**
+## 🧪 Mini Project
 
 🎯 Build a “Show Answer” button
 
@@ -144,9 +135,7 @@ if (code === "1234") {
 
 ---
 
-### **Slide 10: Button Text Toggle**
-
-**🧪 Improve UX with Button Text**
+## 🧪 Improve UX with Button Text
 
 ```js
 btn.innerText = isVisible ? "Hide" : "Show";
@@ -156,9 +145,7 @@ btn.innerText = isVisible ? "Hide" : "Show";
 
 ---
 
-### **Slide 11: Homework / Extension**
-
-**📝 Try at Home**
+## 📝 Try at Home
 
 * Add a **second secret**
 * Have two buttons: each toggles one message
@@ -168,9 +155,7 @@ btn.innerText = isVisible ? "Hide" : "Show";
 
 ---
 
-### **Slide 12: Secretly Learned**
-
-**🧠 Concepts in Action**
+## 🧠 Concepts in Action
 
 | Concept      | Example Used                     |
 | ------------ | -------------------------------- |
@@ -182,9 +167,7 @@ btn.innerText = isVisible ? "Hide" : "Show";
 
 ---
 
-### **Slide 13: Wrap-Up**
-
-**✅ What You Can Do Now**
+## ✅ What You Can Do Now
 
 * Control visibility of HTML elements
 * Toggle things on/off using JavaScript

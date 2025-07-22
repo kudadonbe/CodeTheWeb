@@ -1,7 +1,13 @@
-### **Slide 1: Title Slide**
+---
+marp: true
+theme: uncover
+class: invert
+paginate: true
+--------------
 
-**🏫 Code the Web – Class 11**
-**Portfolio Site – HTML Structure**
+# 🏫 Code the Web – Class 11
+
+## Portfolio Site – HTML Structure
 
 > 🎯 Build the skeleton of your personal website
 > 🧱 Use clean HTML to organize content
@@ -9,9 +15,7 @@
 
 ---
 
-### **Slide 2: Session Goal**
-
-**🎯 What You’ll Build Today**
+## 🎯 What You’ll Build Today
 
 * A personal **portfolio webpage**
 * Only HTML – **no styling or behavior yet**
@@ -20,9 +24,7 @@
 
 ---
 
-### **Slide 3: Class Overview**
-
-**🧑‍🏫 Today's Plan**
+## 🧑‍🏫 Today's Plan
 
 | Section         | Description                                   |
 | --------------- | --------------------------------------------- |
@@ -33,9 +35,7 @@
 
 ---
 
-### **Slide 4: Sample Page Layout**
-
-**📐 Page Sections to Include**
+## 📐 Page Sections to Include
 
 * `<header>` – Your name + title
 * `<nav>` – Navigation links
@@ -49,9 +49,7 @@
 
 ---
 
-### **Slide 5: Example HTML Snippet**
-
-**🛠️ Sample HTML Structure**
+## 🛠️ Sample HTML Structure (Part 1)
 
 ```html
 <header>
@@ -64,7 +62,13 @@
   <a href="#projects">Projects</a>
   <a href="#contact">Contact</a>
 </nav>
+```
 
+---
+
+## 🛠️ Sample HTML Structure (Part 2)
+
+```html
 <section id="about">
   <h2>About Me</h2>
   <p>Write something here.</p>
@@ -75,9 +79,7 @@
 
 ---
 
-### **Slide 6: Key HTML Tags**
-
-**📖 HTML Concepts Reviewed**
+## 📖 HTML Concepts Reviewed
 
 | Tag            | Purpose                               |
 | -------------- | ------------------------------------- |
@@ -90,9 +92,7 @@
 
 ---
 
-### **Slide 7: Why Make a Portfolio?**
-
-**🌐 Real-World Use**
+## 🌐 Real-World Use
 
 * Show your skills to others
 * Share projects and code
@@ -101,9 +101,7 @@
 
 ---
 
-### **Slide 8: Plan Your Page**
-
-**📝 Section Planning**
+## 📝 Section Planning
 
 Draw or outline on paper:
 
@@ -114,13 +112,11 @@ Draw or outline on paper:
 * Contact
 * Footer
 
-> ✅ Planning before coding helps structure your ideas
+✅ Planning before coding helps structure your ideas
 
 ---
 
-### **Slide 9: Build It Live**
-
-**💻 Hands-On Practice**
+## 💻 Hands-On Practice
 
 * Create a new file: `portfolio.html`
 * Add each section with IDs
@@ -128,9 +124,7 @@ Draw or outline on paper:
 
 ---
 
-### **Slide 10: Navigation with Links**
-
-**🔗 Internal Navigation with Anchors**
+## 🔗 Internal Navigation with Anchors
 
 ```html
 <nav>
@@ -144,32 +138,26 @@ Draw or outline on paper:
 
 ---
 
-### **Slide 11: In-Class Challenge**
+## 🧪 Add an Extra Section
 
-**🧪 Add an Extra Section**
-
-> ➕ Add a **“Skills”** or **“Experience”** section
-> 📋 Use a list (`<ul>`) or table (`<table>`)
-> ✨ Bonus: Add your **own project names**
+➕ Add a **“Skills”** or **“Experience”** section
+📋 Use a list (`<ul>`) or table (`<table>`)
+✨ Bonus: Add your **own project names**
 
 ---
 
-### **Slide 12: Homework / Extension**
+## 📝 Customize at Home
 
-**📝 Customize at Home**
+Add:
 
-* Add:
-
-  * ✅ Your real name
-  * ✅ Real project names
-  * ✅ A short bio
-  * ✅ Extra paragraph under “About Me”
+* ✅ Your real name
+* ✅ Real project names
+* ✅ A short bio
+* ✅ Extra paragraph under “About Me”
 
 ---
 
-### **Slide 13: Secretly Learned**
-
-**🧠 Behind the Scenes**
+## 🧠 Behind the Scenes
 
 | Concept             | Where You Used It                       |
 | ------------------- | --------------------------------------- |
@@ -180,9 +168,7 @@ Draw or outline on paper:
 
 ---
 
-### **Slide 14: Wrap-Up**
-
-**✅ You Can Now\...**
+## ✅ You Can Now\...
 
 * Build a **real HTML website layout**
 * Use semantic structure to organize content

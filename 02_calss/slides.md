@@ -1,86 +1,81 @@
-### **Slide 1: Title Slide**
+---
+marp: true
+theme: uncover
+class: invert
+paginate: true
+---
 
-**🏫 Code the Web – Class 2**
-**Buttons + JavaScript**
+# 🏫 Code the Web – Class 2  
+## Buttons + JavaScript
 
-> 🎯 Make your web pages respond when clicked
-> 🖱️ Add interaction with buttons and functions
+> 🎯 Make your web pages respond when clicked  
+> 🖱️ Add interaction with buttons and functions  
 > ✨ Edit your Welcome Card with real code!
 
 ---
 
-### **Slide 2: Session Goal**
+## 🎯 What You'll Learn Today
 
-**🎯 What You'll Learn Today**
-
-* Use **JavaScript** to control your page
-* Write a function that runs on a button click
-* Update the **text** on the screen dynamically
-* Extend your Welcome Card from Class 1
+- Use **JavaScript** to control your page  
+- Write a function that runs on a button click  
+- Update the **text** on the screen dynamically  
+- Extend your Welcome Card from Class 1
 
 ---
 
-### **Slide 3: Class Overview**
-
-**🧑‍🏫 Today’s Focus**
+## 🧑‍🏫 Today’s Focus
 
 | Section        | Description                        |
 | -------------- | ---------------------------------- |
 | **Topic**      | Add interactivity using JavaScript |
 | **Duration**   | 1.5–2 hours                        |
-| **Outcome**    | Button changes a name or message   |
+| **Outcome**    | Button changes name/message        |
 | **Start With** | The `index.html` from Class 1      |
 
 ---
 
-### **Slide 4: Key Concepts**
-
-**📖 JavaScript Concepts for Today**
+## 📖 JavaScript Concepts for Today
 
 | Concept            | Description                              |
 | ------------------ | ---------------------------------------- |
-| `function`         | A block of code you can run repeatedly   |
-| `let`              | Used to store a value                    |
-| `onclick`          | Triggers code when an element is clicked |
-| `getElementById()` | Finds an HTML element by its ID          |
+| `function`         | Block of reusable code                   |
+| `let`              | Stores a value                           |
+| `onclick`          | Runs code when clicked                   |
+| `getElementById()` | Finds an element in HTML                 |
 | `innerText`        | Changes the visible text                 |
 
 ---
 
-### **Slide 5: Quick Recap**
+## 🔁 From Class 1
 
-**🔁 From Class 1**
+Ask the class:
 
-Ask:
+- What was in your **Welcome Card**?
+- What HTML tags did you use? (`<h1>`, `<p>`, `<img>`...)
 
-* What was in your Welcome Card?
-* What tags did you use? (`<h1>`, `<p>`, `<img>`...)
+Remind them:
 
-Remind:
-
-* You already built a **static page**
-* Today it becomes **interactive**
+- You built a **static page**  
+- Today it becomes **interactive** 🔄
 
 ---
 
-### **Slide 6: JavaScript Basics**
+## 💡 What Is JavaScript?
 
-**💡 What Is JavaScript?**
-
-* It controls how your webpage **behaves**
-* You write it inside `<script>...</script>` tags
-* Optional examples:
+- It controls how your webpage **behaves**
+- You write it inside `<script>...</script>`
+- Example:
 
 ```js
-console.log("Hello!");  
+console.log("Hello!");
 alert("Welcome!");
-```
+````
+
+> JS helps us talk to the page and make changes
 
 ---
 
-### **Slide 7: Live Demo**
-
-**🛠️ Greeting Button Demo**
+## 🛠️ Greeting Button Demo
 
 ```html
 <h2 id="name">Your Name</h2>
@@ -94,33 +89,35 @@ function changeGreeting() {
 </script>
 ```
 
-✅ Button changes the text!
+✅ Button updates the text with JavaScript!
 
 ---
 
-### **Slide 8: Hands-On Practice**
+## 💻 Your Turn!
 
-**💻 Your Turn!**
+Build it yourself:
 
-* Create a **button**
+* Add a **button**
 * Write a **function**
-* Use `getElementById()`
-* Use `innerText` to change:
+* Use `getElementById()` and `innerText` to change:
 
   * Name
   * Greeting
-  * Any other element
+  * Any element
 
 ---
 
-### **Slide 9: Mini Challenge**
+## 🧪 Mini Challenge: Two Buttons
 
-**🧪 Add a Second Button**
+Make 2 buttons:
 
-> 🔸 Create 2 buttons:
->
-> 1. **Change the name**
-> 2. **Change the bio/message**
+1. Change the **name**
+2. Change the **bio/message**
+
+```html
+<p id="bio">I love building the web!</p>
+<button onclick="changeBio()">Change Bio</button>
+```
 
 ```js
 function changeBio() {
@@ -128,35 +125,23 @@ function changeBio() {
 }
 ```
 
-```html
-<p id="bio">I love building the web!</p>
-<button onclick="changeBio()">Change Bio</button>
-```
-
 ---
 
-### **Slide 10: Homework / Extension**
+## 📝 Practice Ideas (Homework)
 
-**📝 Practice Ideas**
-
-* Add another **button** with a different effect
-* Use `prompt()` to ask for the user’s name:
+* Add more buttons with different actions
+* Use `prompt()` to ask for a name:
 
 ```js
 let name = prompt("What is your name?");
-```
-
-* Create a greeting like:
-
-```js
 let greeting = "Welcome, " + name + "!";
 ```
 
+* Update the greeting using the input!
+
 ---
 
-### **Slide 11: Secretly Learned**
-
-**🧠 What You Picked Up**
+## 🧠 What You Picked Up
 
 | Concept          | Where You Used It                  |
 | ---------------- | ---------------------------------- |
@@ -168,11 +153,12 @@ let greeting = "Welcome, " + name + "!";
 
 ---
 
-### **Slide 12: Wrap-Up**
+## ✅ You Can Now\...
 
-**✅ You Can Now\...**
+* ✅ Write basic JavaScript functions
+* ✅ Make buttons that change content
+* ✅ Use **IDs** to target HTML
+* ✅ Make your Welcome Card **interactive**
 
-* Write basic JavaScript functions
-* Make buttons that **change the page**
-* Use **IDs** to target HTML elements
-* Build an interactive Welcome Card!
+> 🎉 You’ve added behavior to your webpage!
+

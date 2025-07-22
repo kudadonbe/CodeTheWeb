@@ -1,7 +1,14 @@
-### **Slide 1: Title Slide**
+---
 
-**🏫 Code the Web – Class 12**
-**Add Projects + Contact Form**
+marp: true
+theme: uncover
+class: invert
+paginate: true
+--------------
+
+# 🏫 Code the Web – Class 12
+
+## Add Projects + Contact Form
 
 > 🎯 Expand your portfolio website
 > 🔗 Link your real projects
@@ -9,9 +16,7 @@
 
 ---
 
-### **Slide 2: Session Goal**
-
-**🎯 What You'll Do Today**
+## 🎯 What You'll Do Today
 
 1. Add clickable **project links**
 2. Create a basic **Contact Form**
@@ -20,9 +25,7 @@
 
 ---
 
-### **Slide 3: Class Overview**
-
-**🧑‍🏫 Class Format**
+## 🧑‍🏫 Class Format
 
 | Section             | Description                           |
 | ------------------- | ------------------------------------- |
@@ -33,9 +36,7 @@
 
 ---
 
-### **Slide 4: Project Section Example**
-
-**🛠️ Projects List with Links**
+## 🛠️ Projects List with Links
 
 ```html
 <section id="projects">
@@ -52,9 +53,7 @@
 
 ---
 
-### **Slide 5: Contact Form Example**
-
-**📬 Build Your Contact Section**
+## 📬 Build Your Contact Section (Part 1)
 
 ```html
 <form action="mailto:you@example.com" method="POST">
@@ -63,7 +62,13 @@
 
   <label>Your Email:</label><br>
   <input type="email" name="email" required><br><br>
+```
 
+---
+
+## 📬 Build Your Contact Section (Part 2)
+
+```html
   <label>Your Message:</label><br>
   <textarea name="message" rows="4" required></textarea><br><br>
 
@@ -75,9 +80,7 @@
 
 ---
 
-### **Slide 6: Key Concepts Introduced**
-
-**📖 HTML Concepts Today**
+## 📖 HTML Concepts Today
 
 | Tag/Attribute     | Use                              |
 | ----------------- | -------------------------------- |
@@ -90,9 +93,7 @@
 
 ---
 
-### **Slide 7: Recap Class 11**
-
-**🔁 Portfolio Structure**
+## 🔁 Portfolio Structure
 
 Ask students:
 
@@ -100,31 +101,26 @@ Ask students:
 * Did you use semantic tags?
 * Did you name yourself in the header?
 
-Review structure:
 ✅ Header – About – Projects – Contact – Footer
 
 ---
 
-### **Slide 8: Add Real Project Links**
-
-**🔗 Add 1–2 Projects**
+## 🔗 Add 1–2 Projects
 
 * Use CodePen or `.html` files
 * Link inside `<li><a href=""></a></li>`
 * Example:
 
-  ```html
-  <a href="todo.html" target="_blank">To-Do App</a>
-  ```
+```html
+<a href="todo.html" target="_blank">To-Do App</a>
+```
 
 ✅ Make them clickable
 ✅ Open in new tab
 
 ---
 
-### **Slide 9: Build the Contact Form**
-
-**🛠 Step-by-Step Form**
+## 🛠 Step-by-Step Form
 
 * Use 3 fields: Name, Email, Message
 * Wrap inside `<form>` with `mailto:`
@@ -134,11 +130,9 @@ Review structure:
 
 ---
 
-### **Slide 10: In-Class Challenge**
+## 🧪 Extend Your Contact Section
 
-**🧪 Extend Your Contact Section**
-
-> Add a new **“Contact Method”** section:
+➕ Add a new **“Contact Method”** section:
 
 * Add your **LinkedIn**, **GitHub**, or **Instagram**
 * Use icons if possible
@@ -146,9 +140,7 @@ Review structure:
 
 ---
 
-### **Slide 11: Homework / Extension**
-
-**📝 Practice Tasks**
+## 📝 Practice Tasks
 
 * Replace placeholder email with your **real address**
 * Add **one more project** with a working link
@@ -156,9 +148,7 @@ Review structure:
 
 ---
 
-### **Slide 12: Secretly Learned**
-
-**🧠 What You Picked Up Today**
+## 🧠 What You Picked Up Today
 
 | Concept             | Where You Used It                         |
 | ------------------- | ----------------------------------------- |
@@ -169,9 +159,7 @@ Review structure:
 
 ---
 
-### **Slide 13: Wrap-Up**
-
-**✅ You Can Now\...**
+## ✅ You Can Now\...
 
 * Link to your projects professionally
 * Build a functional contact form

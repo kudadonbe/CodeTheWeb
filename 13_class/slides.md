@@ -1,7 +1,14 @@
-### **Slide 1: Title Slide**
+---
 
-**🏫 Code the Web – Class 13**
-**Make It Mobile – Responsive Design**
+marp: true
+theme: uncover
+class: invert
+paginate: true
+--------------
+
+# 🏫 Code the Web – Class 13
+
+## Make It Mobile – Responsive Design
 
 > 🎯 Make your site look great on phones AND desktops
 > 📱 Learn Flexbox + Media Queries
@@ -9,9 +16,7 @@
 
 ---
 
-### **Slide 2: Session Goal**
-
-**🎯 What You’ll Do Today**
+## 🎯 What You’ll Do Today
 
 * Make your site **responsive**
 * Use **Flexbox** for layout
@@ -20,9 +25,7 @@
 
 ---
 
-### **Slide 3: Class Overview**
-
-**🧑‍🏫 Class Format**
+## 🧑‍🏫 Class Format
 
 | Section        | Description                                |
 | -------------- | ------------------------------------------ |
@@ -33,9 +36,7 @@
 
 ---
 
-### **Slide 4: Why Responsive Design?**
-
-**📱 Desktop vs. Mobile Experience**
+## 📱 Desktop vs. Mobile Experience
 
 Ask students:
 
@@ -46,9 +47,7 @@ Ask students:
 
 ---
 
-### **Slide 5: Step 1 – Meta Tag**
-
-**🧩 Make It Scale Correctly**
+## 🧩 Make It Scale Correctly
 
 ```html
 <head>
@@ -61,9 +60,7 @@ Ask students:
 
 ---
 
-### **Slide 6: Step 2 – Flexbox Navigation**
-
-**🧱 Use Flexbox to Arrange Items**
+## 🧱 Use Flexbox to Arrange Items
 
 ```css
 .navbar {
@@ -79,15 +76,20 @@ Ask students:
 
 ---
 
-### **Slide 7: Step 3 – Media Queries**
-
-**🎯 Style for Different Screen Sizes**
+## 🎯 Style for Different Screen Sizes (Part 1)
 
 ```css
 @media (max-width: 600px) {
   .navbar {
     flex-direction: column;
     align-items: center;
+```
+
+---
+
+## 🎯 Style for Different Screen Sizes (Part 2)
+
+```css
   }
 
   h1 {
@@ -101,13 +103,11 @@ Ask students:
 }
 ```
 
-> 🔍 `max-width` = activate when screen is **narrow**
+🔍 `max-width` = activate when screen is **narrow**
 
 ---
 
-### **Slide 8: Key Concepts Introduced**
-
-**📖 Today’s Tools**
+## 📖 Today’s Tools
 
 | Concept           | Explanation                            |
 | ----------------- | -------------------------------------- |
@@ -119,9 +119,7 @@ Ask students:
 
 ---
 
-### **Slide 9: In-Class Challenge**
-
-**🧪 Apply Your Skills**
+## 🧪 Apply Your Skills
 
 ✅ Make **Projects section** show:
 
@@ -137,7 +135,13 @@ Ask students:
 .project-list li {
   width: 100%;
 }
+```
 
+---
+
+## 🧪 Apply Your Skills (Media Query)
+
+```css
 @media (min-width: 768px) {
   .project-list li {
     width: 48%;
@@ -147,9 +151,7 @@ Ask students:
 
 ---
 
-### **Slide 10: Mobile Touch Fixes**
-
-**☑️ Improve Mobile UX**
+## ☑️ Improve Mobile UX
 
 * Buttons = min **40px height**
 * Font = min **16px**
@@ -158,9 +160,7 @@ Ask students:
 
 ---
 
-### **Slide 11: Homework / Extension**
-
-**📝 Continue at Home**
+## 📝 Continue at Home
 
 * Center contact form using Flexbox
 * Hide background images on phones
@@ -169,9 +169,7 @@ Ask students:
 
 ---
 
-### **Slide 12: Secretly Learned**
-
-**🧠 What You Picked Up**
+## 🧠 What You Picked Up
 
 | Concept              | Where You Used It                     |
 | -------------------- | ------------------------------------- |
@@ -182,11 +180,10 @@ Ask students:
 
 ---
 
-### **Slide 13: Wrap-Up**
-
-**✅ You Can Now\...**
+## ✅ You Can Now\...
 
 * Make your site look great on any screen
 * Use Flexbox to create smart layouts
 * Add responsive rules with media queries
 * Get ready to style your **final portfolio**
+  

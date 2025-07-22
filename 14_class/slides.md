@@ -1,7 +1,14 @@
-### **Slide 1: Title Slide**
+---
 
-**🏁 Code the Web – Class 14**
-**Publish & Celebrate Your Skills**
+marp: true
+theme: uncover
+class: invert
+paginate: true
+--------------
+
+# 🏁 Code the Web – Class 14
+
+## Publish & Celebrate Your Skills
 
 > 🎯 Launch your personal website
 > 🌍 Go live with GitHub Pages
@@ -9,9 +16,7 @@
 
 ---
 
-### **Slide 2: Session Goal**
-
-**🎯 Today’s Mission**
+## 🎯 Today’s Mission
 
 * **Publish** your portfolio using GitHub Pages
 * **Review** what you’ve learned
@@ -20,9 +25,7 @@
 
 ---
 
-### **Slide 3: Class Overview**
-
-**🧑‍🏫 What We’ll Do Today**
+## 🧑‍🏫 What We’ll Do Today
 
 | Section      | Description                                  |
 | ------------ | -------------------------------------------- |
@@ -33,9 +36,7 @@
 
 ---
 
-### **Slide 4: Why Publish?**
-
-**🌍 Make It Real**
+## 🌍 Make It Real
 
 * Share your projects
 * Show your skills to friends, teachers, the world
@@ -44,16 +45,20 @@
 
 ---
 
-### **Slide 5: GitHub Pages – Step-by-Step**
-
-**🛠️ Publishing Your Site**
+## 🛠️ Publishing Your Site (Part 1)
 
 1️⃣ Go to [github.com](https://github.com) → **Sign Up / Log In**
 2️⃣ Create a **new repository** named:
  `your-username.github.io`
+
 3️⃣ Click “Add file” → **Upload your files**
- ✔ `index.html`
- ✔ `style.css`, `script.js`
+✔ `index.html`
+✔ `style.css`, `script.js`
+
+---
+
+## 🛠️ Publishing Your Site (Part 2)
+
 4️⃣ Click **“Commit changes”**
 5️⃣ Visit: `https://your-username.github.io`
 
@@ -61,9 +66,7 @@
 
 ---
 
-### **Slide 6: File Checklist**
-
-**📁 Before You Upload**
+## 📁 Before You Upload
 
 ✅ `index.html` is the homepage
 ✅ CSS/JS files are linked correctly
@@ -78,9 +81,7 @@
 
 ---
 
-### **Slide 7: Key Concepts Recap**
-
-**📖 What You’re Applying Today**
+## 📖 What You’re Applying Today
 
 | Concept          | Use                                     |
 | ---------------- | --------------------------------------- |
@@ -91,9 +92,7 @@
 
 ---
 
-### **Slide 8: Live Demo**
-
-**👨‍🏫 Teacher Walkthrough**
+## 👨‍🏫 Teacher Walkthrough
 
 * Create the repo
 * Upload files
@@ -105,22 +104,18 @@
 
 ---
 
-### **Slide 9: Student Publishing Time**
-
-**🚀 Let’s Launch Your Site!**
+## 🚀 Let’s Launch Your Site!
 
 * Upload your portfolio to GitHub
 * Test the live URL
 * Ask a friend to open it
 
-> ✋ Raise your hand if you need help
-> 💬 You can also help each other!
+✋ Raise your hand if you need help
+💬 You can also help each other!
 
 ---
 
-### **Slide 10: In-Class Challenge**
-
-**🎉 Celebrate Each Other**
+## 🎉 Celebrate Each Other
 
 ✅ Share your live link with a classmate
 ✅ Open **2 peer websites**
@@ -129,9 +124,7 @@
 
 ---
 
-### **Slide 11: Reflection**
-
-**📝 Look Back on the Journey**
+## 📝 Look Back on the Journey
 
 * What project made you most proud?
 * What was the hardest part?
@@ -141,9 +134,7 @@
 
 ---
 
-### **Slide 12: What You Now Know**
-
-**🧠 What You’ve Learned**
+## 🧠 What You’ve Learned
 
 | Skill                  | How You Learned It                      |
 | ---------------------- | --------------------------------------- |
@@ -155,9 +146,7 @@
 
 ---
 
-### **Slide 13: Optional Certificate**
-
-**🏆 Completion Certificate**
+## 🏆 Completion Certificate
 
 🎉 Optionally present printed or digital certificates:
 
@@ -170,9 +159,7 @@
 
 ---
 
-### **Slide 14: Wrap-Up**
-
-**✅ You Can Now\...**
+## ✅ You Can Now\...
 
 * Build websites from scratch
 * Use HTML, CSS, and JavaScript

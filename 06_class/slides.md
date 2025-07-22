@@ -1,40 +1,39 @@
-### **Slide 1: Title Slide**
+---
+marp: true
+theme: uncover
+class: invert
+paginate: true
+---
 
-**🏫 Code the Web – Class 6**
-**Arrays in Action**
+# 🏫 Code the Web – Class 6  
+## Arrays in Action
 
-> 🎯 Build a live comment collector
-> 🧠 Learn how arrays and DOM work together
+> 🎯 Build a live comment collector  
+> 🧠 Learn how arrays and DOM work together  
 > 💡 Update your page with a growing list!
 
 ---
 
-### **Slide 2: Session Goal**
+## 🎯 What You’ll Learn Today
 
-**🎯 What You’ll Learn Today**
-
-* Use **arrays** to collect multiple inputs
-* Use **loops** to display all items
-* Use **JavaScript + DOM** to show dynamic lists
-* Build your first **live-updating UI**
+- Use **arrays** to collect multiple inputs  
+- Use **loops** to display all items  
+- Use **JavaScript + DOM** to show dynamic lists  
+- Build your first **live-updating UI**
 
 ---
 
-### **Slide 3: Class Overview**
+## 🧑‍🏫 Today's Structure
 
-**🧑‍🏫 Today's Structure**
-
-* **Topic:** Arrays + dynamic DOM updates
-* **Duration:** 1.5–2 hours
-* **Format:** Code-along → Live Demo → Challenge
-* **Output:** A comment or feedback list
-* **Previous:** Forms, input `.value`, `onsubmit`
+- **Topic:** Arrays + dynamic DOM updates  
+- **Duration:** 1.5–2 hours  
+- **Format:** Code-along → Live Demo → Challenge  
+- **Output:** A comment or feedback list  
+- **Previous:** Forms, input `.value`, `onsubmit`
 
 ---
 
-### **Slide 4: Key Concepts**
-
-**📖 JavaScript Concepts Introduced**
+## 📖 JavaScript Concepts Introduced
 
 | Concept           | Description           |
 | ----------------- | --------------------- |
@@ -47,33 +46,27 @@
 
 ---
 
-### **Slide 5: Class 5 Recap**
-
-**🔁 Review Check**
+## 🔁 Review Check
 
 Ask:
 
-* How do we get **input values**?
-* What does `.value` do?
-* Why do we use `event.preventDefault()`?
+- How do we get **input values**?  
+- What does `.value` do?  
+- Why do we use `event.preventDefault()`?
 
-Remember:
-
-* Forms are interactive
-* We already know how to read one input — now we collect many!
+✔ Forms are interactive  
+✔ We already know how to read one input — now we collect many!
 
 ---
 
-### **Slide 6: What’s an Array?**
+## 📦 Arrays Are Lists
 
-**📦 Arrays Are Lists**
-
-* Store multiple values inside one variable
-* Like a **box** that holds many notes
+- Store multiple values inside one variable  
+- Like a **box** that holds many notes
 
 ```js
 let comments = ["Hi", "Nice job", "Cool!"];
-```
+````
 
 * Add with:
 
@@ -83,9 +76,7 @@ comments.push("New comment");
 
 ---
 
-### **Slide 7: Live Demo Setup**
-
-**🛠️ HTML for the Collector**
+## 🛠️ HTML for the Collector
 
 ```html
 <input type="text" id="commentInput" placeholder="Type your comment" />
@@ -95,9 +86,7 @@ comments.push("New comment");
 
 ---
 
-### **Slide 8: JavaScript Logic**
-
-**🧠 Collect & Show Comments**
+## 🧠 Collect & Show Comments
 
 ```js
 let comments = [];
@@ -114,9 +103,7 @@ function addComment() {
 
 ---
 
-### **Slide 9: Update the List**
-
-**🔁 Display All Comments**
+## 🔁 Display All Comments
 
 ```js
 function updateList() {
@@ -133,25 +120,22 @@ function updateList() {
 
 ---
 
-### **Slide 10: In-Class Challenge**
-
-**🎯 Build a Wish List App**
+## 🎯 Build a Wish List App
 
 ✅ Features:
 
 * Add new wishes
 * Display in a `<ul>`
-* Bonus:
 
-  ```js
-  document.getElementById("count").innerText = "Total: " + comments.length;
-  ```
+Bonus:
+
+```js
+document.getElementById("count").innerText = "Total: " + comments.length;
+```
 
 ---
 
-### **Slide 11: Extension Ideas**
-
-**📝 Homework / Enhancement Task**
+## 📝 Homework / Enhancement Task
 
 * Add a **Clear All** button
 * Show **newest item on top**
@@ -160,9 +144,7 @@ function updateList() {
 
 ---
 
-### **Slide 12: Secretly Learned**
-
-**🧠 Behind the Scenes**
+## 🧠 Behind the Scenes
 
 | Concept       | Example in Class                    |
 | ------------- | ----------------------------------- |
@@ -174,11 +156,11 @@ function updateList() {
 
 ---
 
-### **Slide 13: Wrap Up**
-
-**✅ You Can Now\...**
+## ✅ You Can Now\...
 
 * Build and use an array in your app
 * Collect user input over time
 * Show that data on the page dynamically
 * Create fully working interactive lists
+
+```

@@ -1,7 +1,14 @@
-### **Slide 1: Title Slide**
+---
 
-**🏫 Code the Web – Class 8**
-**Intro to Project Building – To-Do App**
+marp: true
+theme: uncover
+class: invert
+paginate: true
+--------------
+
+# 🏫 Code the Web – Class 8
+
+## Intro to Project Building – To-Do App
 
 > 🎯 Learn how real web apps are structured
 > 🛠 Plan and build a clean app layout
@@ -9,9 +16,7 @@
 
 ---
 
-### **Slide 2: Session Goal**
-
-**🎯 What You’ll Learn Today**
+## 🎯 What You’ll Learn Today
 
 * How to plan a web app visually and structurally
 * How to build static layouts using **HTML + CSS**
@@ -20,9 +25,7 @@
 
 ---
 
-### **Slide 3: Class Overview**
-
-**🧑‍🏫 Today’s Format**
+## 🧑‍🏫 Today’s Format
 
 | Section      | Description                              |
 | ------------ | ---------------------------------------- |
@@ -33,9 +36,7 @@
 
 ---
 
-### **Slide 4: Key Concepts**
-
-**📖 Concepts for Today**
+## 📖 Concepts for Today
 
 | Concept        | Description                                  |
 | -------------- | -------------------------------------------- |
@@ -46,9 +47,7 @@
 
 ---
 
-### **Slide 5: Quick Review**
-
-**🔁 What We Already Know**
+## 🔁 What We Already Know
 
 * How to **read input values**
 * How to **toggle elements on/off**
@@ -61,9 +60,7 @@ Ask:
 
 ---
 
-### **Slide 6: Project Preview**
-
-**🧭 Today’s Goal: To-Do App Layout**
+## 🧭 Today’s Goal: To-Do App Layout
 
 Show a screenshot or demo.
 
@@ -76,9 +73,7 @@ Main parts:
 
 ---
 
-### **Slide 7: Wireframe First**
-
-**🖊 Sketch It Before You Code**
+## 🖊 Sketch It Before You Code
 
 Draw a wireframe on board or paper:
 
@@ -95,9 +90,7 @@ Draw a wireframe on board or paper:
 
 ---
 
-### **Slide 8: HTML Structure**
-
-**🧱 Layout – Sample HTML**
+## 🧱 Layout – Sample HTML
 
 ```html
 <div class="todo-app">
@@ -110,9 +103,7 @@ Draw a wireframe on board or paper:
 
 ---
 
-### **Slide 9: Basic Styling**
-
-**🎨 Sample CSS Layout**
+## 🎨 Sample CSS Layout
 
 ```css
 .todo-app {
@@ -135,9 +126,7 @@ Simple but neat! Students can customize.
 
 ---
 
-### **Slide 10: In-Class Challenge**
-
-**🧪 Your Task**
+## 🧪 Your Task
 
 > Build a clean, non-functional **To-Do App layout**
 
@@ -155,9 +144,7 @@ Include:
 
 ---
 
-### **Slide 11: Homework / Extension**
-
-**📝 Practice at Home**
+## 📝 Practice at Home
 
 * Add an **emoji or icon** to your Add button
 * Style the layout in **your own theme**
@@ -170,9 +157,7 @@ Include:
 
 ---
 
-### **Slide 12: Secretly Learned**
-
-**🧠 Hidden Lessons from Today**
+## 🧠 Hidden Lessons from Today
 
 | Concept         | Where You Used It                       |
 | --------------- | --------------------------------------- |
@@ -183,9 +168,7 @@ Include:
 
 ---
 
-### **Slide 13: Wrap-Up**
-
-**✅ You Can Now\...**
+## ✅ You Can Now\...
 
 * Plan your app like a developer
 * Structure your page for real interaction

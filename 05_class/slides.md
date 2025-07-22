@@ -1,40 +1,39 @@
-### **Slide 1: Title Slide**
+---
+marp: true
+theme: uncover
+class: invert
+paginate: true
+---
 
-**🏫 Code the Web – Class 5**
-**Forms and Input**
+# 🏫 Code the Web – Class 5  
+## Forms and Input
 
-> 🎯 Learn to create HTML forms
-> 💡 Read and validate input with JavaScript
+> 🎯 Learn to create HTML forms  
+> 💡 Read and validate input with JavaScript  
 > ✅ Respond based on user data!
 
 ---
 
-### **Slide 2: Session Goal**
+## 🎯 What You'll Learn Today
 
-**🎯 What You'll Learn Today**
-
-* Create a form using HTML
-* Read user input using JavaScript
-* Validate input (check if filled)
-* Show custom messages with JS
+- Create a form using HTML  
+- Read user input using JavaScript  
+- Validate input (check if filled)  
+- Show custom messages with JS
 
 ---
 
-### **Slide 3: Class Overview**
+## 🧑‍🏫 Structure of Today’s Class
 
-**🧑‍🏫 Structure of Today’s Class**
-
-* **Topic:** Forms & input handling
-* **Duration:** 1.5–2 hours
-* **Format:** Build form → Connect with JS → Add validation
-* **Output:** Feedback form or login check
-* **Review Needed:** Variables, functions, arrays
+- **Topic:** Forms & input handling  
+- **Duration:** 1.5–2 hours  
+- **Format:** Build form → Connect with JS → Add validation  
+- **Output:** Feedback form or login check  
+- **Review Needed:** Variables, functions, arrays
 
 ---
 
-### **Slide 4: Key Concepts**
-
-**📖 HTML + JavaScript Concepts**
+## 📖 HTML + JavaScript Concepts
 
 | Concept                  | Description                        |
 | ------------------------ | ---------------------------------- |
@@ -47,23 +46,19 @@
 
 ---
 
-### **Slide 5: Recap Class 4**
-
-**🔁 Quick Review**
+## 🔁 Quick Review
 
 Ask students:
 
-* What is a **function**?
-* What is an **array**?
-* How did we show **random messages**?
+- What is a **function**?  
+- What is an **array**?  
+- How did we show **random messages**?
 
 ✔ Remember: `function showCompliment()`, `array[]`, `Math.random()`
 
 ---
 
-### **Slide 6: Step 1 – Show a Form**
-
-**📄 HTML Form Elements**
+## 📄 HTML Form Elements
 
 ```html
 <form>
@@ -71,16 +66,14 @@ Ask students:
   <input type="text" />
   <button type="submit">Submit</button>
 </form>
-```
+````
 
 * Use `<form>`, `<input>`, `<label>`, `<button>`
 * Type: `text`, `submit`
 
 ---
 
-### **Slide 7: Step 2 – Read Input**
-
-**🔍 Use JavaScript to Get Input**
+## 🔍 Use JavaScript to Get Input
 
 ```js
 let name = document.getElementById("username").value;
@@ -92,9 +85,7 @@ let name = document.getElementById("username").value;
 
 ---
 
-### **Slide 8: Step 3 – Live Demo Code**
-
-**🧪 Feedback Form with Validation**
+## 🧪 Feedback Form with Validation
 
 ```html
 <form onsubmit="handleFeedback(event)">
@@ -120,9 +111,7 @@ function handleFeedback(event) {
 
 ---
 
-### **Slide 9: Step 4 – Add Validation**
-
-**✅ Why Validate Input?**
+## ✅ Why Validate Input?
 
 * Prevent empty fields
 * Give feedback to the user
@@ -137,19 +126,17 @@ if (name.trim() === "") {
 
 ---
 
-### **Slide 10: Challenge Time!**
-
-**🧪 Build a Login Simulator**
+## 🧪 Build a Login Simulator
 
 * Ask for **username**
 
-* If it's **"admin"**, show:
+If it's **"admin"**, show:
 
-  > “Welcome back, Admin!”
+> “Welcome back, Admin!”
 
-* Otherwise:
+Otherwise:
 
-  > “Welcome, guest \[name]!”
+> “Welcome, guest \[name]!”
 
 ```js
 if (name === "admin") {
@@ -161,9 +148,7 @@ if (name === "admin") {
 
 ---
 
-### **Slide 11: Homework / Extension**
-
-**📝 Practice at Home**
+## 📝 Practice at Home
 
 * Add another field (e.g. **Favorite Color**)
 * Show a custom message:
@@ -177,9 +162,7 @@ Add **age** and show:
 
 ---
 
-### **Slide 12: Secretly Learned**
-
-**🧠 What You Learned Today**
+## 🧠 What You Learned Today
 
 | Concept          | Where It’s Used                |
 | ---------------- | ------------------------------ |
@@ -192,11 +175,11 @@ Add **age** and show:
 
 ---
 
-### **Slide 13: Summary**
-
-**✅ You Can Now\...**
+## ✅ You Can Now\...
 
 * Build a working form with submit button
 * Capture user input and use it in JS
 * Validate inputs and give feedback
 * Make your web pages **interactive** and **responsive**
+
+```

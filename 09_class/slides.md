@@ -1,7 +1,13 @@
-### **Slide 1: Title Slide**
+---
+marp: true
+theme: uncover
+class: invert
+paginate: true
+--------------
 
-**🏫 Code the Web – Class 9**
-**Building with Arrays – To-Do App (Part 2)**
+# 🏫 Code the Web – Class 9
+
+## Building with Arrays – To-Do App (Part 2)
 
 > 🎯 Make your To-Do App functional
 > 🧠 Add tasks with JavaScript and arrays
@@ -9,9 +15,7 @@
 
 ---
 
-### **Slide 2: Session Goal**
-
-**🎯 Today’s Objective**
+## 🎯 Today’s Objective
 
 * Use JavaScript to **add tasks** to your To-Do App
 * Store task data in an **array**
@@ -20,9 +24,7 @@
 
 ---
 
-### **Slide 3: Class Overview**
-
-**🧑‍🏫 What’s the Plan?**
+## 🧑‍🏫 What’s the Plan?
 
 | Section      | Description                            |
 | ------------ | -------------------------------------- |
@@ -33,9 +35,7 @@
 
 ---
 
-### **Slide 4: Key Concepts**
-
-**📖 Concepts You’ll Use Today**
+## 📖 Concepts You’ll Use Today
 
 | Concept           | Explanation                    |
 | ----------------- | ------------------------------ |
@@ -47,9 +47,7 @@
 
 ---
 
-### **Slide 5: Review Layout**
-
-**🔁 From Class 8**
+## 🔁 From Class 8
 
 Ask:
 
@@ -64,9 +62,7 @@ Remember:
 
 ---
 
-### **Slide 6: JavaScript – Task Logic**
-
-**🛠️ Basic Task Handling**
+## 🛠️ Basic Task Handling
 
 ```js
 let tasks = [];
@@ -82,20 +78,24 @@ function addTask() {
 }
 ```
 
-> ✅ Prevents empty inputs
-> ✅ Adds task to array
+✅ Prevents empty inputs
+✅ Adds task to array
 
 ---
 
-### **Slide 7: Render the List**
-
-**🔁 Show Tasks on the Page**
+## 🔁 Show Tasks on the Page (Part 1)
 
 ```js
 function renderTasks() {
   let list = document.getElementById("taskList");
   list.innerHTML = ""; // Clear old list
+```
 
+---
+
+## 🔁 Show Tasks on the Page (Part 2)
+
+```js
   for (let i = 0; i < tasks.length; i++) {
     let li = document.createElement("li");
     li.innerText = tasks[i];
@@ -104,13 +104,11 @@ function renderTasks() {
 }
 ```
 
-> 💡 Renders all tasks from the array
+💡 Renders all tasks from the array
 
 ---
 
-### **Slide 8: Add Button Code**
-
-**🔘 HTML Button for Action**
+## 🔘 HTML Button for Action
 
 ```html
 <button onclick="addTask()">Add Task</button>
@@ -120,9 +118,7 @@ When clicked → runs `addTask()` → updates the list!
 
 ---
 
-### **Slide 9: In-Class Challenge**
-
-**🧪 Challenge Time!**
+## 🧪 Challenge Time!
 
 Try extending your app:
 
@@ -140,9 +136,7 @@ Try extending your app:
 
 ---
 
-### **Slide 10: Bonus Ideas**
-
-**✨ Make It Smarter**
+## ✨ Make It Smarter
 
 * Convert task input into **Title Case**
 * Show a **"No tasks yet"** message if list is empty
@@ -150,9 +144,7 @@ Try extending your app:
 
 ---
 
-### **Slide 11: Homework / Extension**
-
-**📝 Practice at Home**
+## 📝 Practice at Home
 
 * Add a **timestamp** next to each task
 * Try grouping logic inside a `todoApp` object
@@ -160,9 +152,7 @@ Try extending your app:
 
 ---
 
-### **Slide 12: Secretly Learned**
-
-**🧠 Behind the Code**
+## 🧠 Behind the Code
 
 | Concept          | Where It Appears                        |
 | ---------------- | --------------------------------------- |
@@ -173,9 +163,7 @@ Try extending your app:
 
 ---
 
-### **Slide 13: Wrap-Up**
-
-**✅ You Can Now\...**
+## ✅ You Can Now\...
 
 * Accept user input
 * Store tasks in memory using arrays

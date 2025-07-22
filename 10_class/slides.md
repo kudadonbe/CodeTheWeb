@@ -1,7 +1,14 @@
-### **Slide 1: Title Slide**
+---
 
-**🏫 Code the Web – Class 10**
-**Finishing the To-Do App: Delete & Mark Done**
+marp: true
+theme: uncover
+class: invert
+paginate: true
+--------------
+
+# 🏫 Code the Web – Class 10
+
+## Finishing the To-Do App: Delete & Mark Done
 
 > 🎯 Complete your app with interactivity
 > ✅ Mark tasks as done
@@ -9,9 +16,7 @@
 
 ---
 
-### **Slide 2: Session Goal**
-
-**🎯 What You’ll Accomplish Today**
+## 🎯 What You’ll Accomplish Today
 
 * Add **✔️ mark as done** feature
 * Add **❌ delete** feature
@@ -20,9 +25,7 @@
 
 ---
 
-### **Slide 3: Class Overview**
-
-**🧑‍🏫 Today’s Focus**
+## 🧑‍🏫 Today’s Focus
 
 | Section         | Description                            |
 | --------------- | -------------------------------------- |
@@ -33,9 +36,7 @@
 
 ---
 
-### **Slide 4: Key Concepts**
-
-**📖 Concepts Introduced**
+## 📖 Concepts Introduced
 
 | Concept        | Explanation                          |
 | -------------- | ------------------------------------ |
@@ -47,9 +48,7 @@
 
 ---
 
-### **Slide 5: Quick Recap**
-
-**🔁 What We Have So Far**
+## 🔁 What We Have So Far
 
 * A layout built in Class 8
 * Functional **Add Task** logic from Class 9
@@ -58,9 +57,7 @@
 
 ---
 
-### **Slide 6: Task Object Structure**
-
-**🧱 Task as an Object**
+## 🧱 Task as an Object
 
 Old version:
 
@@ -74,14 +71,12 @@ New version:
 tasks.push({ text: "Learn JS", done: false });
 ```
 
-> ✅ Easier to store more info
-> ✅ Needed to track completion status
+✅ Easier to store more info
+✅ Needed to track completion status
 
 ---
 
-### **Slide 7: Updated Add Logic**
-
-**🧠 Modified addTask()**
+## 🧠 Modified addTask()
 
 ```js
 function addTask() {
@@ -97,9 +92,7 @@ function addTask() {
 
 ---
 
-### **Slide 8: renderTasks() with Buttons**
-
-**🛠️ Display Each Task with Buttons**
+## 🛠️ Display Tasks – Part 1
 
 ```js
 function renderTasks() {
@@ -110,7 +103,13 @@ function renderTasks() {
     let li = document.createElement("li");
     li.innerText = tasks[i].text;
     li.className = tasks[i].done ? "done" : "";
+```
 
+---
+
+## 🛠️ Display Tasks – Part 2
+
+```js
     let completeBtn = document.createElement("button");
     completeBtn.innerText = "✔️";
     completeBtn.onclick = function () {
@@ -134,9 +133,7 @@ function renderTasks() {
 
 ---
 
-### **Slide 9: CSS for Done Tasks**
-
-**🎨 Style Completed Tasks**
+## 🎨 Style Completed Tasks
 
 ```css
 .done {
@@ -148,16 +145,14 @@ button {
 }
 ```
 
-> 💡 Visual feedback matters!
+💡 Visual feedback matters!
 
 ---
 
-### **Slide 10: In-Class Challenge**
+## 🧪 Build This Together
 
-**🧪 Build This Together**
-
-> ✅ Add “Clear All” button
-> ✅ Add footer: `X of Y tasks completed`
+✅ Add “Clear All” button
+✅ Add footer: `X of Y tasks completed`
 
 ```js
 let completed = tasks.filter(t => t.done).length;
@@ -166,9 +161,7 @@ footer.innerText = `${completed} of ${tasks.length} tasks completed`;
 
 ---
 
-### **Slide 11: Homework / Extension**
-
-**📝 Try at Home**
+## 📝 Try at Home
 
 * Add emojis or icons to completed tasks
 * Show **date/time** when task was added
@@ -177,9 +170,7 @@ footer.innerText = `${completed} of ${tasks.length} tasks completed`;
 
 ---
 
-### **Slide 12: Secretly Learned**
-
-**🧠 Concepts You’ve Used**
+## 🧠 Concepts You’ve Used
 
 | Concept            | Where It’s Used                    |
 | ------------------ | ---------------------------------- |
@@ -191,9 +182,7 @@ footer.innerText = `${completed} of ${tasks.length} tasks completed`;
 
 ---
 
-### **Slide 13: Wrap-Up**
-
-**✅ You Can Now\...**
+## ✅ You Can Now\...
 
 * Add, delete, and mark tasks as done
 * Use arrays of **objects** for better data control
