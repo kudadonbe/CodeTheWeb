@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Data Collector</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #f7f9fb;
+    }
+
+    h2, h3 {
+      color: #333;
+    }
+
+    fieldset {
+      border: 2px solid #007bff;
+      padding: 15px;
+      border-radius: 5px;
+      background: #ffffff;
+      max-width: 600px;
+    }
+
+    legend {
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    input {
+      display: block;
+      margin: 10px 0;
+      padding: 8px;
+      width: 100%;
+      max-width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 8px 16px;
+      margin-right: 5px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 800px;
+      margin-top: 20px;
+      background: white;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #007bff;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #e9f5ff;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Student Data Entry</h2>
+
+  <fieldset>
+    <legend>Student Information</legend>
+    <input id="fullName" placeholder="Full Name" />
+    <input id="age" placeholder="Age" />
+    <input id="address" placeholder="Address" />
+    <input id="contact" placeholder="Contact" />
+    <button onclick="saveStudent()" id="saveBtn">Save</button>
+  </fieldset>
+
+  <h3>Student List</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Full Name</th>
+        <th>Age</th>
+        <th>Address</th>
+        <th>Contact</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody id="studentTableBody">
+      <!-- Student rows will appear here -->
+    </tbody>
+  </table>
+
+  <script>
+    // Store all student data
+    const students = [];
+
+    // Null means no edit is in progress
+    let editingIndex = null;
+
+    function saveStudent() {
+      const fullName = document.getElementById("fullName").value;
+      const age = document.getElementById("age").value;
+      const address = document.getElementById("address").value;
+      const contact = document.getElementById("contact").value;
+
+      const student = { fullName, age, address, contact };
+
+      if (editingIndex === null) {
+        // Add new student
+        students.push(student);
+      } else {
+        // Update existing student
+        students[editingIndex] = student;
+        editingIndex = null;
+        document.getElementById("saveBtn").textContent = "Save";
+      }
+
+      clearInputs();
+      renderTable();
+    }
+
+    function renderTable() {
+      const tableBody = document.getElementById("studentTableBody");
+      tableBody.innerHTML = ""; // Clear previous content
+
+      for (let i = 0; i < students.length; i++) {
+        const student = students[i];
+        const row = `
+          <tr>
+            <td>${i + 1}</td>
+            <td>${student.fullName}</td>
+            <td>${student.age}</td>
+            <td>${student.address}</td>
+            <td>${student.contact}</td>
+            <td>
+              <button onclick="editStudent(${i})">Edit</button>
+              <button onclick="deleteStudent(${i})" style="background-color: red;">Delete</button>
+            </td>
+          </tr>
+        `;
+        tableBody.innerHTML += row;
+      }
+    }
+
+    function editStudent(index) {
+      const student = students[index];
+      document.getElementById("fullName").value = student.fullName;
+      document.getElementById("age").value = student.age;
+      document.getElementById("address").value = student.address;
+      document.getElementById("contact").value = student.contact;
+
+      editingIndex = index;
+      document.getElementById("saveBtn").textContent = "Update";
+    }
+
+    function deleteStudent(index) {
+      if (confirm("Are you sure you want to delete this student?")) {
+        students.splice(index, 1);
+        renderTable();
+      }
+    }
+
+    function clearInputs() {
+      document.getElementById("fullName").value = "";
+      document.getElementById("age").value = "";
+      document.getElementById("address").value = "";
+      document.getElementById("contact").value = "";
+      editingIndex = null;
+      document.getElementById("saveBtn").textContent = "Save";
+    }
+  </script>
+
+</body>
+</html>
