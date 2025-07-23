@@ -51,6 +51,13 @@ paginate: true
 ## 📄 HTML: Page Structure
 
 ```html
-<h2>Your Name</h2>
-<p>I love building the web!</p>
-<button>Click Me!</button>
+<html>
+    <head>
+        <title>Page Structure</title>
+    </head>
+    <body>
+        <h2>Your Name</h2>
+        <p>I love building the web!</p>
+        <button>Click Me!</button>
+    </body>
+</html>

@@ -1,52 +1,30 @@
-# 🏫 **Code the Web – Class 15**
+## 📝 Class Notes (for students)
 
-**Save Your Work with localStorage**
+### 💡 What is `localStorage`?
 
-### 🎯 **Session Goal**
-
-Students will enhance their To-Do App by adding **data persistence** using the browser’s `localStorage`. This introduces real-world app behavior: tasks don’t disappear after refresh.
-
-Focus is on using the browser’s **built-in storage**, and understanding how to convert between **JavaScript objects** and **string format** using `JSON`.
+* A **built-in browser tool** to save small data
+* Keeps your data even after closing the tab
+* Stores **only strings**, so we need `JSON.stringify()` and `JSON.parse()`
 
 ---
 
-## 🧑‍🏫 **Class Overview**
+### ✍️ What You’ll Do Today
 
-| Section       | Description                                                   |
-| ------------- | ------------------------------------------------------------- |
-| Topic         | Add persistence with `localStorage`                           |
-| Duration      | 1.5–2 hours                                                   |
-| Format        | Code-along with explanation and individual enhancement tasks  |
-| Prerequisites | Class 9 (To-Do app logic and DOM rendering)                   |
-| Key Concepts  | `localStorage`, `JSON.stringify()`, `JSON.parse()`, data flow |
-| Output        | A persistent To-Do app that remembers tasks on page reload    |
+1. Store tasks in localStorage
+2. Load saved tasks when the page opens
+3. Automatically update storage after every change
 
 ---
 
-## 💡 **What is localStorage?**
+### 🔧 Key Code Examples
 
-* Browser storage for saving **key–value pairs**
-* Values must be **strings**
-* Stored data remains **after refresh or browser restart**
-* Accessible using:
-
-  * `localStorage.setItem(key, value)`
-  * `localStorage.getItem(key)`
-  * `localStorage.removeItem(key)`
-
----
-
-## 🛠️ **Code Example: Saving to Storage**
+#### Save to storage
 
 ```js
 localStorage.setItem("myTasks", JSON.stringify(tasks));
 ```
 
-> Converts tasks array to string and saves it under a custom key.
-
----
-
-## 🛠️ **Code Example: Loading from Storage**
+#### Load from storage
 
 ```js
 let saved = localStorage.getItem("myTasks");
@@ -56,107 +34,103 @@ if (saved) {
 }
 ```
 
-> Loads string from storage, parses it into an array, then displays it.
+#### Clear storage
+
+```js
+localStorage.removeItem("myTasks");
+```
 
 ---
 
-## 📖 **Key Concepts Introduced**
+### ✅ Your Challenge
 
-| Concept              | Description                                       |
-| -------------------- | ------------------------------------------------- |
-| `localStorage`       | Built-in browser storage system                   |
-| `setItem`, `getItem` | Methods to save and retrieve values               |
-| `JSON.stringify()`   | Converts array → string for storage               |
-| `JSON.parse()`       | Converts string → array for use                   |
-| `removeItem()`       | Clears saved data (used for reset or “Clear All”) |
+1. Make your To-Do list **remember tasks**
+2. Test by refreshing your browser
+3. Bonus: Add a “Clear All” button
 
 ---
 
-## 🧭 **Teaching Flow**
+### 💭 Extra Thinking
 
-### 🔹 Step 1: Recap the To-Do App (10 min)
-
-* Review how tasks are added and rendered
-* Ask: What happens when you refresh the page?
-
----
-
-### 🔹 Step 2: Introduce `localStorage` (15 min)
-
-* Explain that data only lives in memory unless saved
-* Show how to stringify and save data manually in DevTools Console
-* Highlight `.setItem()` and `.getItem()`
+* What else could you save? (Color theme? Name?)
+* Why do we convert data with `JSON.stringify()`?
+* Try viewing your saved data in **DevTools → Application → localStorage**
 
 ---
 
-### 🔹 Step 3: Add Save Functionality (15–20 min)
+## 💻 HTML + JavaScript Demo Code
 
-* Modify `addTask()` and `deleteTask()` to call `saveTasks()`
-* Implement `saveTasks()` that uses `localStorage.setItem()`
-
----
-
-### 🔹 Step 4: Load Saved Tasks (15 min)
-
-* At the bottom of the script, check for saved data:
-
-  ```js
-  let saved = localStorage.getItem("myTasks");
-  if (saved) {
-    tasks = JSON.parse(saved);
-    renderTasks();
-  }
-  ```
-
-* Discuss what happens when no data exists yet
-
----
-
-### 🔹 Step 5: Bonus – “Clear All” Button (10 min)
-
-* Add a new button to the UI:
-
-  ```html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do with localStorage</title>
+  <style>
+    body { font-family: sans-serif; max-width: 500px; margin: auto; padding: 20px; }
+    li.done { text-decoration: line-through; opacity: 0.6; }
+    button { margin-left: 5px; }
+  </style>
+</head>
+<body>
+  <h2>My Tasks</h2>
+  <input type="text" id="taskInput" placeholder="New task..." />
+  <button onclick="addTask()">Add Task</button>
   <button onclick="clearAll()">Clear All</button>
-  ```
+  <ul id="taskList"></ul>
 
-* Implement function:
+  <script>
+    let tasks = [];
 
-  ```js
-  function clearAll() {
-    tasks = [];
-    localStorage.removeItem("myTasks");
-    renderTasks();
-  }
-  ```
+    function addTask() {
+      let input = document.getElementById("taskInput");
+      let taskText = input.value.trim();
+      if (taskText === "") return;
+      tasks.push(taskText);
+      input.value = "";
+      saveTasks();
+      renderTasks();
+    }
 
----
+    function renderTasks() {
+      let list = document.getElementById("taskList");
+      list.innerHTML = "";
+      for (let i = 0; i < tasks.length; i++) {
+        let li = document.createElement("li");
+        li.innerText = tasks[i];
+        let deleteBtn = document.createElement("button");
+        deleteBtn.innerText = "❌";
+        deleteBtn.onclick = function () {
+          tasks.splice(i, 1);
+          saveTasks();
+          renderTasks();
+        };
+        li.appendChild(deleteBtn);
+        list.appendChild(li);
+      }
+    }
 
-## 🧪 **In-Class Challenge**
+    function saveTasks() {
+      localStorage.setItem("myTasks", JSON.stringify(tasks));
+    }
 
-> 🎯 Enhance your app with full memory support:
+    function loadTasks() {
+      let saved = localStorage.getItem("myTasks");
+      if (saved) {
+        tasks = JSON.parse(saved);
+        renderTasks();
+      }
+    }
 
-* Make the app remember tasks after refresh
-* Add a “Clear All” button
-* Check your storage in DevTools → Application → localStorage
-* Bonus: Save and show task count too
+    function clearAll() {
+      tasks = [];
+      localStorage.removeItem("myTasks");
+      renderTasks();
+    }
 
----
-
-## 📝 **Homework / Extension Task**
-
-* Add a timestamp to each task
-* Try saving multiple To-Do lists (e.g., work vs personal) under different keys
-* Use a simple `<select>` to switch between lists
-* Add minimal CSS to distinguish loaded vs newly added items
-
----
-
-## 🧠 **Secretly Learned**
-
-| Concept          | Where It’s Used                           |
-| ---------------- | ----------------------------------------- |
-| Data persistence | `localStorage.setItem()` and `.getItem()` |
-| Serialization    | `JSON.stringify()` / `JSON.parse()`       |
-| Frontend storage | App saves data without a server           |
-| UX improvement   | App feels more “real” with memory         |
+    loadTasks();
+  </script>
+</body>
+</html>
+```

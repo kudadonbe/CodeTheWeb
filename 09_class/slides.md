@@ -83,7 +83,7 @@ function addTask() {
 
 ---
 
-## 🔁 Show Tasks on the Page (Part 1)
+## 🔁 Show Tasks on the Page (P1)
 
 ```js
 function renderTasks() {
@@ -93,7 +93,7 @@ function renderTasks() {
 
 ---
 
-## 🔁 Show Tasks on the Page (Part 2)
+## 🔁 Show Tasks on the Page (P2)
 
 ```js
   for (let i = 0; i < tasks.length; i++) {
@@ -169,3 +169,4 @@ Try extending your app:
 * Store tasks in memory using arrays
 * Build and display list items dynamically
 * Turn your static page into a working app!
+
