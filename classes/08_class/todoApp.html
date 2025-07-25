@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tasks</title>
+
+    <style>
+        .todo-app {
+            direction: rtl;
+            background-color: antiquewhite;
+            padding: 20px;
+            width: 390px;
+            font-family: "Mv Typewriter", "Mv Utheemu";
+            border-radius: 5px;
+            color: rgb(138, 90, 2);
+            border: rgb(196, 179, 148) 2px solid ;
+            
+        }
+
+        .todo-app h2 {
+            text-align: center;
+            color: rgb(249, 145, 9);
+            background-color: rgb(250, 223, 186);
+            padding: 6px;
+            border-radius: 5px;
+        }
+
+        .todo-app button {
+            font-family: "Mv Typewriter";
+            background-color: rgb(248, 142, 3);
+            border: none;
+            border-radius: 5px;
+            padding: 8px;
+            min-height: 35px;
+            color: white;
+
+        }
+
+        .todo-app input {
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(248, 244, 240);
+            min-height: 35px;
+            min-width: 256px;
+            padding: 3px;
+            font-family: "Mv Typewriter";
+    
+        }
+        
+
+    </style>
+</head>
+<body>
+    <!-- This is a To Do App -->
+    <div class="todo-app">
+        <h2>ދުވަހުގެ ތާވަލު</h2>
+        <input type="text" id="inputTask" placeholder="މިއަދު ދެން ކުރާނީ ކޮންކަމެއް...">
+        <button>އިތުރުކޮއްލާ</button>
+        <ol id="taskList">
+            <li>ކަސްރަތު</li>
+            <li>ކެއްކުން</li>
+            
+        </ol>
+    </div>
+    
+
+</body>
+</html>
