@@ -25,28 +25,27 @@
             padding: 6px;
             border-radius: 5px;
         }
+        .todo-app button, input {
+            min-height: 35px;
+            padding: 3px;
+            border-radius: 5px;
+            font-family: "Mv Typewriter";
+
+        }
 
         .todo-app button {
-            font-family: "Mv Typewriter";
             background-color: rgb(248, 142, 3);
             border: none;
-            border-radius: 5px;
-            padding: 8px;
-            min-height: 35px;
             color: white;
-
         }
 
         .todo-app input {
             border: none;
-            border-radius: 5px;
             background-color: rgb(248, 244, 240);
-            min-height: 35px;
             min-width: 256px;
-            padding: 3px;
-            font-family: "Mv Typewriter";
-    
         }
+
+        
         
 
     </style>
@@ -55,15 +54,66 @@
     <!-- This is a To Do App -->
     <div class="todo-app">
         <h2>ދުވަހުގެ ތާވަލު</h2>
-        <input type="text" id="inputTask" placeholder="މިއަދު ދެން ކުރާނީ ކޮންކަމެއް...">
-        <button>އިތުރުކޮއްލާ</button>
+        <input id="inputTask" type="text" placeholder="މިއަދު ދެން ކުރާނީ ކޮންކަމެއް...">
+        <!-- update button -->
+        <button onclick="addTask()" >އިތުރުކޮއްލާ</button>
         <ol id="taskList">
             <li>ކަސްރަތު</li>
-            <li>ކެއްކުން</li>
-            
+            <li>ކެއްކުން</li> 
         </ol>
     </div>
-    
+  
 
+
+<script>
+
+let tasks = [] // to store all the taskes
+
+// TO DO
+// create a function to add Tasks to tasks array
+function addTask() {
+    // take user input
+    let input = document.getElementById("inputTask")
+    // console.log(input);
+    // remove all white spaces in the begining and at the end of a string .trim()
+    let inputText = input.value.trim()
+    // if empty return
+    if (inputText === "") return 
+
+    // add to tasks array
+    tasks.push(inputText)
+    // clear input
+    input.value = ''
+
+    // TO DO
+    // call render list function
+    // we can call rentder function in addTask function
+    renderList()
+}
+
+
+
+// TO DO
+// create a function to render list in ui
+function renderList() {
+    // select ol
+    let list = document.getElementById("taskList")
+    // clear everything in ol
+    list.innerHTML = ""
+    // user array.forEach method
+    tasks.forEach((task) => {
+        // create li
+        let li = document.createElement("li")
+        // add text to li
+        li.innerText = task
+        // append li to ol
+        list.appendChild(li)
+    })
+}
+
+
+
+
+</script>
 </body>
 </html>
