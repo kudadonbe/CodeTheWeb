@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tasks</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            /* direction: rtl; */
+            direction: ltr;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+        }
+
+        .todo-app {
+            background-color: antiquewhite;
+            padding: 20px;
+            width: calc(100% - 20px);
+            max-width: 390px;
+            font-family: "Mv Typewriter", "Mv Utheemu";
+            border-radius: 5px;
+            color: rgb(138, 90, 2);
+            border: 2px solid rgb(196, 179, 148);
+            margin-inline: auto;
+            box-sizing: border-box;
+        }
+
+
+        .todo-app h2 {
+            text-align: center;
+            color: rgb(249, 145, 9);
+            background-color: rgb(250, 223, 186);
+            padding: 6px;
+            border-radius: 5px;
+        }
+
+        
+
+        .todo-app button,
+        input {
+            min-height: 35px;
+            padding: 3px;
+            border-radius: 5px;
+            font-family: "Mv Typewriter";
+        }
+
+        .todo-app button {
+            background-color: rgb(248, 142, 3);
+            border: none;
+            color: white;
+            padding: 8px;
+            margin: 8px;
+        }
+
+        .todo-app input {
+            border: none;
+            background-color: rgb(248, 244, 240);
+            width: 60%;
+            max-width: 320px;
+        }
+
+        .done {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- This is a To Do App -->
+    <div class="todo-app">
+        
+        <h2>ދުވަހުގެ ތާވަލު</h2>
+        <div class="input-row">
+            <input id="inputTask" type="text" placeholder="ދެން ކުރާނީ ކޮންކަމެއް...">
+            <!-- update button -->
+            <button onclick="addTask()">އިތުރުކޮއްލާ</button>
+        </div>
+        <ol id="taskList">
+            <li class="finish">ކަސްރަތު</li>
+            <li>ކެއްކުން</li>
+        </ol>
+    </div>
+
+
+
+    <script>
+
+        let tasks = [] // to store all the taskes
+
+        // TO DO
+        // create a function to add Tasks to tasks array
+        function addTask() {
+            // take user input
+            let input = document.getElementById("inputTask")
+            // console.log(input);
+            // remove all white spaces in the begining and at the end of a string .trim()
+            let inputText = input.value.trim()
+            // if empty return
+            if (inputText === "") return
+
+            // create task object
+            let task = { text: inputText, done: false }
+
+            // add to tasks array
+            tasks.push(task)
+            // clear input
+            input.value = ''
+
+            // TO DO
+            // call render list function
+            // we can call rentder function in addTask function
+            renderList()
+        }
+
+
+
+        // TO DO
+        // create a function to render list in ui
+        function renderList() {
+            // select ol
+            let list = document.getElementById("taskList")
+            // clear everything in ol
+            list.innerHTML = ""
+            // user array.forEach method
+            tasks.forEach((task, index) => {
+                // create li
+                let li = document.createElement("li")
+                // add text to li
+                li.innerText = task.text
+                // add done class
+                // if (task.done) { li.className = 'finish' } else { li.className = ''}
+                // ternary operator syntax --> condition ? valueIfTrue : valueIfFalse ternary operator syntax
+                li.classList = task.done ? 'done' : '' // ternary operator
+
+                // create complete button
+                let completeBtn = document.createElement('button')
+                completeBtn.innerText = "ނިމިއްޖެ"  // ✅
+                completeBtn.className = "complete-btn";
+                completeBtn.onclick = () => {
+                    task.done = !task.done
+                    renderList()
+                }
+
+                let deleteBtn = document.createElement('button')
+                deleteBtn.innerText = "ފޮހެލާ"
+                deleteBtn.className = "delete-btn";
+                deleteBtn.onclick = () => {
+                    tasks.splice(index, 1)
+                    renderList()
+                }
+
+                li.appendChild(completeBtn)
+                li.appendChild(deleteBtn)
+                // append li to ol (list)
+                list.appendChild(li)
+            })
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
