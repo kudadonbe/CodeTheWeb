@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Code the Web – Course Landing</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: #0f2027;
+      color: #fff;
+    }
+
+    header {
+      background: #203a43;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      color: #00d8ff;
+      font-size: 1.5rem;
+    }
+
+    nav a {
+      color: #fff;
+      margin-left: 1.2rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00d8ff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #00d8ff;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 960px;
+      margin: auto;
+    }
+
+    section h3 {
+      font-size: 2rem;
+      color: #00d8ff;
+      margin-bottom: 1rem;
+    }
+
+    section ul, section table {
+      margin-top: 1rem;
+    }
+
+    section table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    table th, table td {
+      border: 1px solid #444;
+      padding: 0.75rem;
+      text-align: left;
+    }
+
+    table th {
+      background-color: #1c313d;
+    }
+
+    footer {
+      background: #203a43;
+      text-align: center;
+      padding: 2rem;
+      color: #ccc;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+      nav a {
+        margin: 0.5rem 0;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>Code the Web</h1>
+    <nav>
+      <a href="#overview">Overview</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#skills">Skills</a>
+      <a href="#addons">Add-ons</a>
+      <a href="#bonus">Bonus</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <h2>Code the Web – Physical Class</h2>
+    <p>Build real websites with hands-on projects in just 14 sessions. No frameworks, no distractions — just pure HTML, CSS, and JavaScript.</p>
+  </div>
+
+  <!-- Overview Section -->
+  <section id="overview">
+    <h3>📘 Course Overview</h3>
+    <ul>
+      <li><strong>Teaching Mode:</strong> Classroom-based</li>
+      <li><strong>Total Sessions:</strong> 14 (1.5–2 hours each)</li>
+      <li><strong>Method:</strong> Live teaching + lab practice</li>
+      <li><strong>Languages:</strong> HTML, CSS, JavaScript</li>
+      <li><strong>Outcome:</strong> Live portfolio website with mini-projects</li>
+    </ul>
+  </section>
+
+  <!-- Schedule Section -->
+  <section id="schedule">
+    <h3>🗓️ Class Schedule</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Week</th>
+          <th>Topic</th>
+          <th>Output</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Welcome to Code & the Web</td><td>Welcome Card</td></tr>
+        <tr><td>2</td><td>Buttons + JavaScript</td><td>Change Text Button</td></tr>
+        <tr><td>3</td><td>Store and Use Info</td><td>Greet User</td></tr>
+        <tr><td>4</td><td>Loops + Functions</td><td>Compliment Generator</td></tr>
+        <tr><td>5</td><td>Forms and Input</td><td>Feedback Form</td></tr>
+        <tr><td>6</td><td>Arrays in Action</td><td>Show Comments List</td></tr>
+        <tr><td>7</td><td>Show/Hide Tricks</td><td>Secret Revealer</td></tr>
+        <tr><td>8</td><td>Plan To-Do App</td><td>Basic Layout</td></tr>
+        <tr><td>9</td><td>Build with Arrays</td><td>Task List</td></tr>
+        <tr><td>10</td><td>Finish To-Do App</td><td>Complete App</td></tr>
+        <tr><td>11</td><td>Portfolio HTML</td><td>Portfolio Layout</td></tr>
+        <tr><td>12</td><td>Contact Form</td><td>Working Contact Page</td></tr>
+        <tr><td>13</td><td>Mobile Design</td><td>Responsive Site</td></tr>
+        <tr><td>14</td><td>Publish Online</td><td>Live Website!</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h3>🧠 What You'll Learn (Without Realizing)</h3>
+    <ul>
+      <li>✅ Variables, strings, numbers, booleans</li>
+      <li>✅ Functions and control flow (`if/else`)</li>
+      <li>✅ Arrays and loops</li>
+      <li>✅ DOM manipulation</li>
+      <li>✅ Events (`onclick`, `submit`, etc.)</li>
+      <li>✅ Debugging with console</li>
+    </ul>
+  </section>
+
+  <!-- Add-ons Section -->
+  <section id="addons">
+    <h3>🎯 Optional Add-Ons</h3>
+    <ul>
+      <li>📝 Mid-Course Quiz (hands-on or multiple choice)</li>
+      <li>📋 Final Portfolio Checklist</li>
+      <li>🌟 Showcase Day (Demo to teachers/class)</li>
+    </ul>
+  </section>
+
+  <!-- Bonus Lessons -->
+  <section id="bonus">
+    <h3>🎁 Bonus Lessons (Class 15–18)</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Class</th>
+          <th>Topic</th>
+          <th>Focus</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>15</td>
+          <td>localStorage To-Do App</td>
+          <td>Data persistence, `localStorage`, JSON.stringify/parse</td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td>IndexedDB Intro</td>
+          <td>Client database, object stores, `idb` library</td>
+        </tr>
+        <tr>
+          <td>17</td>
+          <td>Fetch & JSON APIs</td>
+          <td>Fetch external data, `fetch()`, `.then()`, `async/await`</td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td>Mini Backend with json-server</td>
+          <td>RESTful APIs, CRUD operations (`GET`, `POST`, `PUT`, `DELETE`)</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Code the Web – Built by Sumeyku Academy.
+  </footer>
+
+</body>
+</html>
