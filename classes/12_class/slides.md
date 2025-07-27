@@ -4,11 +4,12 @@ marp: true
 theme: uncover
 class: invert
 paginate: true
---------------
+backgroundImage: url('../../settings/kudadonbe_theme_black.png')
+---
 
 # 🏫 Code the Web – Class 12
 
-## Add Projects + Contact Form
+## **Add Projects + Contact Form**
 
 > 🎯 Expand your portfolio website
 > 🔗 Link your real projects
@@ -16,7 +17,7 @@ paginate: true
 
 ---
 
-## 🎯 What You'll Do Today
+## 🎯 **What You'll Do Today**
 
 1. Add clickable **project links**
 2. Create a basic **Contact Form**
@@ -25,7 +26,7 @@ paginate: true
 
 ---
 
-## 🧑‍🏫 Class Format
+## 🧑‍🏫 **Class Format**
 
 | Section             | Description                           |
 | ------------------- | ------------------------------------- |
@@ -36,7 +37,7 @@ paginate: true
 
 ---
 
-## 🛠️ Projects List with Links
+## 🛠️ **Projects List with Links**
 
 ```html
 <section id="projects">
@@ -53,7 +54,7 @@ paginate: true
 
 ---
 
-## 📬 Build Your Contact Section (Part 1)
+## 📬 **Build Your Contact Section (Part 1)**
 
 ```html
 <form action="mailto:you@example.com" method="POST">
@@ -66,7 +67,7 @@ paginate: true
 
 ---
 
-## 📬 Build Your Contact Section (Part 2)
+## 📬 **Build Your Contact Section (Part 2)**
 
 ```html
   <label>Your Message:</label><br>
@@ -80,7 +81,7 @@ paginate: true
 
 ---
 
-## 📖 HTML Concepts Today
+## 📖 **HTML Concepts Today**
 
 | Tag/Attribute     | Use                              |
 | ----------------- | -------------------------------- |
@@ -93,7 +94,7 @@ paginate: true
 
 ---
 
-## 🔁 Portfolio Structure
+## 🔁 **Portfolio Structure**
 
 Ask students:
 
@@ -105,7 +106,7 @@ Ask students:
 
 ---
 
-## 🔗 Add 1–2 Projects
+## 🔗 **Add 1–2 Projects**
 
 * Use CodePen or `.html` files
 * Link inside `<li><a href=""></a></li>`
@@ -120,7 +121,7 @@ Ask students:
 
 ---
 
-## 🛠 Step-by-Step Form
+## 🛠 **Step-by-Step Form**
 
 * Use 3 fields: Name, Email, Message
 * Wrap inside `<form>` with `mailto:`
@@ -130,7 +131,7 @@ Ask students:
 
 ---
 
-## 🧪 Extend Your Contact Section
+## 🧪 **Extend Your Contact Section**
 
 ➕ Add a new **“Contact Method”** section:
 
@@ -140,7 +141,7 @@ Ask students:
 
 ---
 
-## 📝 Practice Tasks
+## 📝 **Practice Tasks**
 
 * Replace placeholder email with your **real address**
 * Add **one more project** with a working link
@@ -148,7 +149,7 @@ Ask students:
 
 ---
 
-## 🧠 What You Picked Up Today
+## 🧠 **What You Picked Up Today**
 
 | Concept             | Where You Used It                         |
 | ------------------- | ----------------------------------------- |
@@ -159,7 +160,7 @@ Ask students:
 
 ---
 
-## ✅ You Can Now\...
+## ✅ **You Can Now\...**
 
 * Link to your projects professionally
 * Build a functional contact form

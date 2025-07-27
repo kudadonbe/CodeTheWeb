@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,8 +15,8 @@
             font-family: "Mv Typewriter", "Mv Utheemu";
             border-radius: 5px;
             color: rgb(138, 90, 2);
-            border: rgb(196, 179, 148) 2px solid ;
-            
+            border: rgb(196, 179, 148) 2px solid;
+
         }
 
         .todo-app h2 {
@@ -25,7 +26,9 @@
             padding: 6px;
             border-radius: 5px;
         }
-        .todo-app button, input {
+
+        .todo-app button,
+        input {
             min-height: 35px;
             padding: 3px;
             border-radius: 5px;
@@ -37,6 +40,8 @@
             background-color: rgb(248, 142, 3);
             border: none;
             color: white;
+            padding: 8px;
+            margin: 8px;
         }
 
         .todo-app input {
@@ -45,75 +50,107 @@
             min-width: 256px;
         }
 
-        
-        
+        .done {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
 
+        
     </style>
 </head>
+
 <body>
     <!-- This is a To Do App -->
     <div class="todo-app">
         <h2>ދުވަހުގެ ތާވަލު</h2>
         <input id="inputTask" type="text" placeholder="މިއަދު ދެން ކުރާނީ ކޮންކަމެއް...">
         <!-- update button -->
-        <button onclick="addTask()" >އިތުރުކޮއްލާ</button>
+        <button onclick="addTask()">އިތުރުކޮއްލާ</button>
         <ol id="taskList">
-            <li>ކަސްރަތު</li>
-            <li>ކެއްކުން</li> 
+            <li class="finish">ކަސްރަތު</li>
+            <li>ކެއްކުން</li>
         </ol>
     </div>
-  
-
-
-<script>
-
-let tasks = [] // to store all the taskes
-
-// TO DO
-// create a function to add Tasks to tasks array
-function addTask() {
-    // take user input
-    let input = document.getElementById("inputTask")
-    // console.log(input);
-    // remove all white spaces in the begining and at the end of a string .trim()
-    let inputText = input.value.trim()
-    // if empty return
-    if (inputText === "") return 
-
-    // add to tasks array
-    tasks.push(inputText)
-    // clear input
-    input.value = ''
-
-    // TO DO
-    // call render list function
-    // we can call rentder function in addTask function
-    renderList()
-}
 
 
 
-// TO DO
-// create a function to render list in ui
-function renderList() {
-    // select ol
-    let list = document.getElementById("taskList")
-    // clear everything in ol
-    list.innerHTML = ""
-    // user array.forEach method
-    tasks.forEach((task) => {
-        // create li
-        let li = document.createElement("li")
-        // add text to li
-        li.innerText = task
-        // append li to ol
-        list.appendChild(li)
-    })
-}
+    <script>
+
+        let tasks = [] // to store all the taskes
+
+        // TO DO
+        // create a function to add Tasks to tasks array
+        function addTask() {
+            // take user input
+            let input = document.getElementById("inputTask")
+            // console.log(input);
+            // remove all white spaces in the begining and at the end of a string .trim()
+            let inputText = input.value.trim()
+            // if empty return
+            if (inputText === "") return
+
+            // create task object
+            let task = { text: inputText, done: false }
+
+            // add to tasks array
+            tasks.push(task)
+            // clear input
+            input.value = ''
+
+            // TO DO
+            // call render list function
+            // we can call rentder function in addTask function
+            renderList()
+        }
+
+
+
+        // TO DO
+        // create a function to render list in ui
+        function renderList() {
+            // select ol
+            let list = document.getElementById("taskList")
+            // clear everything in ol
+            list.innerHTML = ""
+            // user array.forEach method
+            tasks.forEach((task, index) => {
+                // create li
+                let li = document.createElement("li")
+                // add text to li
+                li.innerText = task.text
+                // add done class
+                // if (task.done) { li.className = 'finish' } else { li.className = ''}
+                // ternary operator syntax --> condition ? valueIfTrue : valueIfFalse ternary operator syntax
+                li.classList = task.done ? 'done' : '' // ternary operator
+
+                // create complete button
+                let completeBtn = document.createElement('button')
+                completeBtn.innerText = "ނިމިއްޖެ"  // ✅
+                completeBtn.className = "complete-btn";
+                completeBtn.onclick = () => {
+                    task.done = !task.done
+                    renderList()
+                }
+
+                let deleteBtn = document.createElement('button')
+                deleteBtn.innerText = "ފޮހެލާ"
+                deleteBtn.className = "delete-btn";
+                deleteBtn.onclick = () => {
+                    tasks.splice(index, 1)
+                    renderList()
+                }
+
+                li.appendChild(completeBtn)
+                li.appendChild(deleteBtn)
+                // append li to ol (list)
+                list.appendChild(li)
+            })
+        }
 
 
 
 
-</script>
+    </script>
 </body>
+
 </html>

@@ -4,11 +4,12 @@ marp: true
 theme: uncover
 class: invert
 paginate: true
---------------
+backgroundImage: url('../../settings/kudadonbe_theme_black.png')
+---
 
 # 🏫 Code the Web – Class 10
 
-## Finishing the To-Do App: Delete & Mark Done
+## **Finishing the To-Do App: Delete & Mark Done**
 
 > 🎯 Complete your app with interactivity
 > ✅ Mark tasks as done
@@ -16,16 +17,16 @@ paginate: true
 
 ---
 
-## 🎯 What You’ll Accomplish Today
+## 🎯 **What You’ll Accomplish Today**
 
-* Add **✔️ mark as done** feature
+* Add **✅ mark as done** feature
 * Add **❌ delete** feature
 * Learn about arrays, objects, and DOM updates
 * Make a fully working **interactive task list**
 
 ---
 
-## 🧑‍🏫 Today’s Focus
+## 🧑‍🏫 **Today’s Focus**
 
 | Section         | Description                            |
 | --------------- | -------------------------------------- |
@@ -36,7 +37,7 @@ paginate: true
 
 ---
 
-## 📖 Concepts Introduced
+## 📖 **Concepts Introduced**
 
 | Concept        | Explanation                          |
 | -------------- | ------------------------------------ |
@@ -48,7 +49,7 @@ paginate: true
 
 ---
 
-## 🔁 What We Have So Far
+## 🔁 **What We Have So Far**
 
 * A layout built in Class 8
 * Functional **Add Task** logic from Class 9
@@ -57,7 +58,7 @@ paginate: true
 
 ---
 
-## 🧱 Task as an Object
+## 🧱 **Task as an Object**
 
 Old version:
 
@@ -76,7 +77,7 @@ tasks.push({ text: "Learn JS", done: false });
 
 ---
 
-## 🧠 Modified addTask()
+## 🧠 **Modified addTask()**
 
 ```js
 function addTask() {
@@ -92,7 +93,7 @@ function addTask() {
 
 ---
 
-## 🛠️ Display Tasks – Part 1
+## 🛠️ **Display Tasks – Part 1**
 
 ```js
 function renderTasks() {
@@ -107,7 +108,7 @@ function renderTasks() {
 
 ---
 
-## 🛠️ Display Tasks – Part 2
+## 🛠️ **Display Tasks – Part 2**
 
 ```js
     let completeBtn = document.createElement("button");
@@ -133,7 +134,7 @@ function renderTasks() {
 
 ---
 
-## 🎨 Style Completed Tasks
+## 🎨 **Style Completed Tasks**
 
 ```css
 .done {
@@ -149,7 +150,7 @@ button {
 
 ---
 
-## 🧪 Build This Together
+## 🧪 **Build This Together**
 
 ✅ Add “Clear All” button
 ✅ Add footer: `X of Y tasks completed`
@@ -161,7 +162,7 @@ footer.innerText = `${completed} of ${tasks.length} tasks completed`;
 
 ---
 
-## 📝 Try at Home
+## 📝 **Try at Home**
 
 * Add emojis or icons to completed tasks
 * Show **date/time** when task was added
@@ -170,7 +171,7 @@ footer.innerText = `${completed} of ${tasks.length} tasks completed`;
 
 ---
 
-## 🧠 Concepts You’ve Used
+## 🧠 **Concepts You’ve Used**
 
 | Concept            | Where It’s Used                    |
 | ------------------ | ---------------------------------- |
@@ -182,7 +183,7 @@ footer.innerText = `${completed} of ${tasks.length} tasks completed`;
 
 ---
 
-## ✅ You Can Now\...
+## ✅ **You Can Now\...**
 
 * Add, delete, and mark tasks as done
 * Use arrays of **objects** for better data control

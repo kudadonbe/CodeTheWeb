@@ -3,6 +3,7 @@ marp: true
 theme: uncover
 class: invert
 paginate: true
+backgroundImage: url('../../settings/kudadonbe_theme_black.png')
 ---
 
 # 🏫 Code the Web – Class 2  

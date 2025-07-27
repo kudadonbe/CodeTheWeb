@@ -3,11 +3,12 @@ marp: true
 theme: uncover
 class: invert
 paginate: true
---------------
+backgroundImage: url('../../settings/kudadonbe_theme_black.png')
+---
 
 # 🏫 Code the Web – Class 11
 
-## Portfolio Site – HTML Structure
+## **Portfolio Site – HTML Structure**
 
 > 🎯 Build the skeleton of your personal website
 > 🧱 Use clean HTML to organize content
@@ -15,7 +16,7 @@ paginate: true
 
 ---
 
-## 🎯 What You’ll Build Today
+## 🎯 **What You’ll Build Today**
 
 * A personal **portfolio webpage**
 * Only HTML – **no styling or behavior yet**
@@ -24,7 +25,7 @@ paginate: true
 
 ---
 
-## 🧑‍🏫 Today's Plan
+## 🧑‍🏫 **Today's Plan**
 
 | Section         | Description                                   |
 | --------------- | --------------------------------------------- |
@@ -35,7 +36,7 @@ paginate: true
 
 ---
 
-## 📐 Page Sections to Include
+## 📐 **Page Sections to Include**
 
 * `<header>` – Your name + title
 * `<nav>` – Navigation links
@@ -49,7 +50,7 @@ paginate: true
 
 ---
 
-## 🛠️ Sample HTML Structure (Part 1)
+## 🛠️ **Sample HTML Structure (P1)**
 
 ```html
 <header>
@@ -66,7 +67,7 @@ paginate: true
 
 ---
 
-## 🛠️ Sample HTML Structure (Part 2)
+## 🛠️ **Sample HTML Structure (P2)**
 
 ```html
 <section id="about">
@@ -79,7 +80,7 @@ paginate: true
 
 ---
 
-## 📖 HTML Concepts Reviewed
+## 📖 **HTML Concepts Reviewed**
 
 | Tag            | Purpose                               |
 | -------------- | ------------------------------------- |
@@ -92,7 +93,7 @@ paginate: true
 
 ---
 
-## 🌐 Real-World Use
+## 🌐 **Real-World Use**
 
 * Show your skills to others
 * Share projects and code
@@ -101,7 +102,7 @@ paginate: true
 
 ---
 
-## 📝 Section Planning
+## 📝 **Section Planning**
 
 Draw or outline on paper:
 
@@ -116,7 +117,7 @@ Draw or outline on paper:
 
 ---
 
-## 💻 Hands-On Practice
+## 💻 **Hands-On Practice**
 
 * Create a new file: `portfolio.html`
 * Add each section with IDs
@@ -124,7 +125,7 @@ Draw or outline on paper:
 
 ---
 
-## 🔗 Internal Navigation with Anchors
+## 🔗 **Internal Navigation with Anchors**
 
 ```html
 <nav>
@@ -138,7 +139,7 @@ Draw or outline on paper:
 
 ---
 
-## 🧪 Add an Extra Section
+## 🧪 **Add an Extra Section**
 
 ➕ Add a **“Skills”** or **“Experience”** section
 📋 Use a list (`<ul>`) or table (`<table>`)
@@ -146,7 +147,7 @@ Draw or outline on paper:
 
 ---
 
-## 📝 Customize at Home
+## 📝 **Customize at Home**
 
 Add:
 
@@ -157,7 +158,7 @@ Add:
 
 ---
 
-## 🧠 Behind the Scenes
+## 🧠 **Behind the Scenes**
 
 | Concept             | Where You Used It                       |
 | ------------------- | --------------------------------------- |
@@ -168,7 +169,7 @@ Add:
 
 ---
 
-## ✅ You Can Now\...
+## ✅ **You Can Now\...**
 
 * Build a **real HTML website layout**
 * Use semantic structure to organize content

@@ -3,10 +3,11 @@ marp: true
 theme: uncover
 class: invert
 paginate: true
+backgroundImage: url('../../settings/kudadonbe_theme_black.png')
 ---
 
-# 🏫 Code the Web – Class 3  
-## Store and Use Logic
+# 🏫 Code the Web – Class 3
+## **Store and Use Logic**
 
 > 🔹 Learn how to store user input  
 > 🔹 Use if/else to respond  
@@ -14,7 +15,7 @@ paginate: true
 
 ---
 
-## 🎯 Goal of Today’s Class
+## 🎯 **Goal of Today’s Class**
 
 - Store information using `let`  
 - Ask users for their name or age  
@@ -23,7 +24,7 @@ paginate: true
 
 ---
 
-## 🧑‍🏫 Class Format & Focus
+## 🧑‍🏫 **Class Format & Focus**
 
 - **Topic:** Variables + conditional logic  
 - **Time:** 1.5–2 hours  
@@ -45,7 +46,7 @@ paginate: true
 
 ---
 
-## 🔁 From Last Class (Class 2)
+## 🔁 **From Last Class (Class 2)**
 
 - What did your button do?  
 - You used:
