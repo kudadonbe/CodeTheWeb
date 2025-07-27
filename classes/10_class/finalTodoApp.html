@@ -2,36 +2,35 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Tasks</title>
 
     <style>
+        @import url("../../bootcamp/certificateGen/fonts/fontsetup.css");
         * {
             box-sizing: border-box;
         }
 
         body {
-            /* direction: rtl; */
-            direction: ltr;
+            direction: rtl;
             font-size: 16px;
             margin: 0;
             padding: 0;
         }
 
         .todo-app {
+            margin-top: 20px;
             background-color: antiquewhite;
             padding: 20px;
-            width: calc(100% - 20px);
+            width: 100%;
             max-width: 390px;
-            font-family: "Mv Typewriter", "Mv Utheemu";
+            font-family: "Mv Typewriter Web", "Mv Utheemu Web";
             border-radius: 5px;
             color: rgb(138, 90, 2);
             border: 2px solid rgb(196, 179, 148);
             margin-inline: auto;
-            box-sizing: border-box;
         }
-
 
         .todo-app h2 {
             text-align: center;
@@ -41,14 +40,27 @@
             border-radius: 5px;
         }
 
-        
+        .input-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
 
-        .todo-app button,
-        input {
+        .input-row input {
+            flex: 1;
+            min-width: 0;
+            border: none;
+            background-color: rgb(248, 244, 240);
             min-height: 35px;
             padding: 3px;
             border-radius: 5px;
-            font-family: "Mv Typewriter";
+            font-family: "Mv Typewriter Web";
+        }
+
+        .input-row button {
+            flex-shrink: 0;
         }
 
         .todo-app button {
@@ -56,116 +68,144 @@
             border: none;
             color: white;
             padding: 8px;
-            margin: 8px;
+            margin: 8px 0;
+            min-height: 35px;
+            border-radius: 5px;
+            font-family: "Mv Typewriter Web";
         }
 
-        .todo-app input {
-            border: none;
-            background-color: rgb(248, 244, 240);
-            width: 60%;
-            max-width: 320px;
+        .todo-app .complete-btn {
+            background-color: #28a745;
+            color: white;
+            margin-left: 8px;
         }
 
-        .done {
+        .todo-app .delete-btn {
+            background-color: #dc3545;
+            color: white;
+            margin-left: 8px;
+        }
+
+        .complete-btn:hover {
+            background-color: #218838;
+        }
+
+        .delete-btn:hover {
+            background-color: #c82333;
+        }
+
+        .list-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .task-text {
+            flex-grow: 1;
+            word-break: break-word;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 4px;
+        }
+
+        .done .task-text {
             text-decoration: line-through;
             opacity: 0.6;
         }
+
+
     </style>
 </head>
 
 <body>
-    <!-- This is a To Do App -->
     <div class="todo-app">
-        
         <h2>ދުވަހުގެ ތާވަލު</h2>
         <div class="input-row">
-            <input id="inputTask" type="text" placeholder="ދެން ކުރާނީ ކޮންކަމެއް...">
-            <!-- update button -->
+            <input id="inputTask" type="text" placeholder="ދެން ކުރާނީ ކޮންކަމެއް..." />
             <button onclick="addTask()">އިތުރުކޮއްލާ</button>
         </div>
         <ol id="taskList">
-            <li class="finish">ކަސްރަތު</li>
-            <li>ކެއްކުން</li>
+            <li>
+                <div class="list-item">
+                    <div class="task-text">
+                        ސިމެންތި ޖެހުން
+                    </div>
+                    <div class="btn-group">
+                        <button class="complete-btn">ނިމިއްޖެ</button>
+                        <button class="delete-btn">ކަންޑާލާ</button>
+                    </div>
+                </div>
+            </li>
         </ol>
     </div>
 
-
-
     <script>
+        const tasks = [];
 
-        let tasks = [] // to store all the taskes
-
-        // TO DO
-        // create a function to add Tasks to tasks array
         function addTask() {
-            // take user input
-            let input = document.getElementById("inputTask")
-            // console.log(input);
-            // remove all white spaces in the begining and at the end of a string .trim()
-            let inputText = input.value.trim()
-            // if empty return
-            if (inputText === "") return
-
-            // create task object
-            let task = { text: inputText, done: false }
-
-            // add to tasks array
-            tasks.push(task)
-            // clear input
-            input.value = ''
-
-            // TO DO
-            // call render list function
-            // we can call rentder function in addTask function
-            renderList()
+            const input = document.getElementById("inputTask");
+            const text = input.value.trim();
+            if (!text) return;
+            const task = { text, done: false };
+            // tasks.push(task);
+            tasks.unshift(task);
+            input.value = "";
+            renderList();
         }
 
-
-
-        // TO DO
-        // create a function to render list in ui
         function renderList() {
-            // select ol
-            let list = document.getElementById("taskList")
-            // clear everything in ol
-            list.innerHTML = ""
-            // user array.forEach method
+            const list = document.getElementById("taskList");
+            list.innerHTML = "";
+
             tasks.forEach((task, index) => {
-                // create li
-                let li = document.createElement("li")
-                // add text to li
-                li.innerText = task.text
-                // add done class
-                // if (task.done) { li.className = 'finish' } else { li.className = ''}
-                // ternary operator syntax --> condition ? valueIfTrue : valueIfFalse ternary operator syntax
-                li.classList = task.done ? 'done' : '' // ternary operator
+                const li = document.createElement("li");
+                li.className = task.done ? "done" : "";
 
-                // create complete button
-                let completeBtn = document.createElement('button')
-                completeBtn.innerText = "ނިމިއްޖެ"  // ✅
+                // container div
+                const container = document.createElement("div");
+                container.className = "list-item";
+
+                // Text span
+                const textDiv = document.createElement("div");
+                textDiv.className = "task-text";
+                textDiv.textContent = task.text;
+
+                // Button group container
+                const btnGroup = document.createElement("div");
+                btnGroup.className = "btn-group";
+
+                // Complete button
+                const completeBtn = document.createElement("button");
                 completeBtn.className = "complete-btn";
+                completeBtn.textContent = task.done ? "ނުނިމޭ" : "ނިމިއްޖެ";
                 completeBtn.onclick = () => {
-                    task.done = !task.done
-                    renderList()
-                }
+                    task.done = !task.done;
+                    renderList();
+                };
 
-                let deleteBtn = document.createElement('button')
-                deleteBtn.innerText = "ފޮހެލާ"
+                // Delete button
+                const deleteBtn = document.createElement("button");
                 deleteBtn.className = "delete-btn";
+                deleteBtn.textContent = "ކަނޑާލާ";
                 deleteBtn.onclick = () => {
-                    tasks.splice(index, 1)
-                    renderList()
-                }
+                    tasks.splice(index, 1);
+                    renderList();
+                };
 
-                li.appendChild(completeBtn)
-                li.appendChild(deleteBtn)
-                // append li to ol (list)
-                list.appendChild(li)
-            })
+                // Append buttons to group
+                btnGroup.appendChild(completeBtn);
+                btnGroup.appendChild(deleteBtn);
+
+                // Assemble li: [Text]     [Button Group]
+                container.appendChild(textDiv);
+                container.appendChild(btnGroup);
+                li.appendChild(container);
+                list.appendChild(li);
+            });
         }
-
-
-
 
     </script>
 </body>
