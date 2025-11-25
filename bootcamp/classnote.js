@@ -32,12 +32,36 @@ STEP-BY-STEP FUNDAMENTALS
 // Print each transaction using a for loop
 
 
+
 // ===== 6. Conditionals =====
 // Check if a deposit amount is valid using if/else
 
-
+  
 // ===== 7. Functions =====
 // Create a simple deposit function that updates account balance
 
 
+// ===== 8. ES6+ Features =====
+// Use destructuring to extract object properties
+// Use .map() to transform data
+// Use .filter() to conditionally select data
+// Use .reduce() to aggregate data
 
+
+// ===== 9. JSON =====
+// Convert a JavaScript object to a JSON string using JSON.stringify()
+// Parse a JSON string back into a JavaScript object using JSON.parse()
+
+
+// ===== 10. Asynchronous JavaScript =====
+// Simulate a network request with Promises
+// Use async/await for cleaner asynchronous code
+
+
+// ===== 11. Error Handling =====
+// Use a try...catch block to handle invalid operations gracefully
+
+
+// ===== 12. OOP / Classes =====
+// Define an Account class with properties and methods
+// Understand the 'this' keyword within a class context
