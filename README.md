@@ -50,7 +50,12 @@ Mini projects built during or after classes:
 
 ### 🎒 `bootcamp/`
 
-JS examples and syntax practice used for extra lessons or debugging.
+JavaScript practice exercises covering all fundamentals:
+
+* **13 exercise files** (01_variables.js → 13_oop_classes.js)
+* Each file has educational introduction explaining **what** and **why**
+* Covers: variables, data types, arrays, objects, loops, conditionals, functions, ES6+, JSON, async, error handling, OOP
+* See `bootcamp/README.md` for setup and testing instructions
 
 ### 📁 `settings/`
 
@@ -91,7 +96,21 @@ Planning docs:
 
 ## 🚀 Getting Started
 
-To preview landing page or class content:
+### For Students (Testing JavaScript Exercises)
+
+```bash
+# Install dependencies (first time only)
+pnpm install
+
+# Run JavaScript files with auto-reload
+pnpm dev bootcamp/exercises/01_variables.js
+
+# Stop with Ctrl+C
+```
+
+See [`bootcamp/README.md`](bootcamp/README.md) for detailed instructions.
+
+### For Viewing HTML/CSS Projects
 
 ```bash
 # Run local server (optional)
