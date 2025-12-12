@@ -17,12 +17,31 @@ This is **Code the Web**, a web development curriculum for teaching HTML, CSS, a
 ```
 .
 ├── classes/          # 00-18: Teaching materials (slides.md, note.md/guide.md, demo HTML)
+├── online-course/    # 7-day intensive online course (orientation + 7 days)
 ├── projects/         # Student projects and examples (banking, todo, certificateGen, etc.)
 ├── bootcamp/         # JavaScript practice exercises and syntax drills
 ├── tutorial/         # Bonus tutorial examples
 ├── settings/         # Course planning docs and outlines
 └── index.html        # Course landing page
 ```
+
+## Course Formats
+
+This repository contains **two distinct course formats**:
+
+1. **14-Week Physical Classroom Course** (`classes/` directory)
+   - 14 core sessions + 4 bonus lessons
+   - 1.5-2 hours per session
+   - In-person, hands-on lab setting
+   - Builds portfolio website with multiple projects
+   - Progressive learning from basics to GitHub Pages deployment
+
+2. **7-Day Intensive Online Course** (`online-course/` directory)
+   - Orientation + 7 days of concentrated learning
+   - Designed for online delivery (Google Meet, MS Teams, Skype)
+   - Fast-paced fundamentals: HTML → CSS → JavaScript → Project
+   - Each day has `slides.md` and `notes.md`
+   - Culminates in Certificate Generator project (day 6) and review (day 7)
 
 ## Key Projects
 
@@ -90,9 +109,26 @@ python3 -m http.server
 open index.html
 open projects/todo/finalTodoApp.html
 open classes/08_class/todoApp.html
+open online-course/day6/project/index.html
 ```
 
-No build process, no npm install required for most projects.
+### Running JavaScript Exercises (bootcamp/)
+
+```bash
+# Install dependencies (first time only)
+pnpm install
+
+# Run with auto-reload using nodemon
+pnpm dev bootcamp/exercises/01_variables.js
+
+# Alternative aliases
+pnpm watch bootcamp/exercises/01_variables.js
+
+# Or run once with Node.js
+node bootcamp/exercises/01_variables.js
+```
+
+No build process, no npm install required for HTML/CSS projects.
 
 **Exception:** `projects/learnFunctions/` contains node_modules with Airtable integration (dotenv, node-fetch, airtable packages).
 

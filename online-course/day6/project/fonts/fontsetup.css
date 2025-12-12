@@ -1,0 +1,162 @@
+/* ================================
+   AK Fonts (Web Safe Namespaced)
+   ================================ */
+@font-face {
+  font-family: 'AK Veli Web';
+  src: url('AKVeli-Regular.otf') format('opentype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'AK Veli Web';
+  src: url('AKVeli-Bold.otf') format('opentype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'AK Veli Web';
+  src: url('AKVeli-Light.otf') format('opentype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'AK Liyan Web';
+  src: url('AK Liyan.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'AK Liyan Web';
+  src: url('AK Liyan Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'AK Rasmee Web';
+  src: url('AK Rasmee.ttf') format('truetype');
+}
+
+/* ================================
+   Arabic / Dhivehi Fonts
+   ================================ */
+@font-face {
+  font-family: 'A Bismillah Web';
+  src: url('A_Bismillah.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'DAM Madheeh Web';
+  src: url('DAM_Madheeh.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Dhivehi Web';
+  src: url('Dhivehi.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Easa Avas Web';
+  src: url('EasaAvasAthuliyun-Regular-0723.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Easa Surukhee Web';
+  src: url('EasaSurukhee-Bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Faruma Web';
+  src: url('Faruma.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Maumoon Web';
+  src: url('Maumoon.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Mv Typewriter Web';
+  src: url('mvtyper.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Mv Utheemu Web';
+  src: url('mvutheemuREGULAR.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'Mv Utheemu Web';
+  src: url('mvutheemuBOLD.ttf') format('truetype');
+  font-weight: 700;
+}
+
+/* ================================
+   Mono / Developer Fonts
+   ================================ */
+@font-face {
+  font-family: 'DM Mono Web';
+  src: url('DMMono-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'DM Mono Web';
+  src: url('DMMono-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+@font-face {
+  font-family: 'DM Mono Web';
+  src: url('DMMono-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'DM Mono Web';
+  src: url('DMMono-Italic.ttf') format('truetype');
+  font-style: italic;
+}
+@font-face {
+  font-family: 'DM Mono Web';
+  src: url('DMMono-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'DM Mono Web';
+  src: url('DMMono-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'MesloLGS NF Web';
+  src: url('MesloLGS NF Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+@font-face {
+  font-family: 'MesloLGS NF Web';
+  src: url('MesloLGS NF Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'MesloLGS NF Web';
+  src: url('MesloLGS NF Italic.ttf') format('truetype');
+  font-style: italic;
+}
+@font-face {
+  font-family: 'MesloLGS NF Web';
+  src: url('MesloLGS NF Bold Italic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'IBM Plex Mono Web';
+  src: url('IBMPlexMono-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* ================================
+   Mv MAG Round Family
+   ================================ */
+@font-face {
+  font-family: 'Mv MAG Round Web';
+  src: url('Mv_MAG_Round_Bold.otf') format('opentype');
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Mv MAG Round Web';
+  src: url('Mv_MAG_Round_HBold.otf') format('opentype');
+  font-weight: 800;
+}
+@font-face {
+  font-family: 'Mv MAG Round Web';
+  src: url('Mv_MAG_Round_XBold.otf') format('opentype');
+  font-weight: 900;
+}
