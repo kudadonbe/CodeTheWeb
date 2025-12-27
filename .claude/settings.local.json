@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nUpdate CLAUDE.md with online course info and add 7-day intensive course materials\n\nAdded documentation for the new 7-day online course format and included course materials with slides, notes, and certificate generator project.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push)",
+      "Bash(powershell -Command \"$path = [Environment]::GetEnvironmentVariable(''Path'', ''User''); Write-Output $path\")",
+      "Bash(powershell:*)",
+      "Bash(done)",
+      "Bash(wc:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nComplete 7-day online course materials with comprehensive slides and instructor notes\n\nAdded complete course materials for the intensive 7-day online web development course:\n\n- Orientation: Introduction to programming and course overview\n- Day 1: HTML basics (already existed, kept intact)\n- Day 2: CSS fundamentals - selectors, box model, colors, text styling\n- Day 3: Advanced CSS - Flexbox, Grid, responsive design, animations, CSS variables\n- Day 4: JavaScript basics - variables, data types, operators, conditionals, loops, functions\n- Day 5: JavaScript DOM manipulation - selecting elements, events, dynamic content\n- Day 6: Certificate Generator project (already existed, kept intact)\n- Day 7: Project review, deployment to GitHub Pages, career guidance, next steps\n\nEach day includes:\n- slides.md: Comprehensive presentation slides in Marp format\n- notes.md: Detailed instructor notes with teaching tips, examples, and exercises\n\nAll materials ready for immediate course delivery starting tomorrow.\n\n🤖 Generated with Claude Code\nEOF\n)\")",
+      "Bash(git push:*)"
+    ]
+  }
+}
