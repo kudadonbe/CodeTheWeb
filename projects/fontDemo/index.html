@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Font Setup Demo - Code the Web</title>
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- Link to custom fonts -->
+  <link rel="stylesheet" href="fonts/fontsetup.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 3px solid #3498db;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    h1 i {
+      color: #3498db;
+    }
+
+    .subtitle {
+      color: #666;
+      font-size: 1.1rem;
+    }
+
+    .section {
+      margin: 2.5rem 0;
+      padding: 2rem;
+      background: #f8f9fa;
+      border-radius: 12px;
+      border-left: 5px solid #3498db;
+    }
+
+    .section h2 {
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section h2 i {
+      color: #3498db;
+      font-size: 1.6rem;
+    }
+
+    .section h3 {
+      color: #555;
+      margin: 1.5rem 0 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .font-example {
+      padding: 1.5rem;
+      margin: 1rem 0;
+      background: white;
+      border-radius: 8px;
+      border: 2px solid #e0e0e0;
+    }
+
+    .font-name {
+      font-size: 0.85rem;
+      color: #888;
+      font-family: 'Courier New', monospace;
+      margin-bottom: 0.5rem;
+    }
+
+    .sample-text {
+      font-size: 1.8rem;
+      margin: 0.5rem 0;
+    }
+
+    /* ── VS Code-style Code Editor Blocks ── */
+    .code-block {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      border-radius: 8px;
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 0.9rem;
+      overflow: hidden;
+      margin: 1rem 0;
+      line-height: 1.6;
+    }
+
+    .code-header {
+      background: #2d2d2d;
+      padding: 0.5rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      border-bottom: 1px solid #3c3c3c;
+    }
+
+    .code-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .code-dot.red    { background: #ff5f57; }
+    .code-dot.yellow { background: #febc2e; }
+    .code-dot.green  { background: #28c840; }
+
+    .code-filename {
+      margin-left: 0.4rem;
+      font-size: 0.8rem;
+      color: #cccccc;
+    }
+
+    .code-body {
+      list-style: none;
+      margin: 0;
+      padding: 0.8rem 0;
+      overflow-x: auto;
+      counter-reset: line-num;
+    }
+
+    .code-body li {
+      display: block;
+      white-space: pre;
+      line-height: 1.6;
+      min-height: 1.6em;
+      padding-right: 2rem;
+      counter-increment: line-num;
+    }
+
+    .code-body li::before {
+      content: counter(line-num);
+      display: inline-block;
+      min-width: 2.5rem;
+      padding: 0 1.5rem 0 1rem;
+      text-align: right;
+      color: #858585;
+      border-right: 1px solid #3c3c3c;
+      margin-right: 1.5rem;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    .code-body li:hover {
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .code-block .comment  { color: #6a9955; }
+    .code-block .property { color: #9cdcfe; }
+    .code-block .value    { color: #ce9178; }
+    /* ── End Code Editor Blocks ── */
+
+    .steps {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+    }
+
+    .steps ol {
+      margin-left: 1.5rem;
+    }
+
+    .steps li {
+      margin: 0.8rem 0;
+      line-height: 1.8;
+    }
+
+    .note {
+      background: #fff3cd;
+      border-left: 5px solid #ffc107;
+      padding: 1rem;
+      margin: 1rem 0;
+      border-radius: 5px;
+    }
+
+    .note strong {
+      color: #856404;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 2px solid #e0e0e0;
+      text-align: center;
+    }
+
+    .weight-demo {
+      font-size: 1.5rem;
+      margin: 0.5rem 0;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 2rem;
+      border-top: 2px solid #e0e0e0;
+      color: #666;
+    }
+
+    /* Dhivehi Font Examples */
+    .dhivehi-demo {
+      font-family: 'Dhivehi Web', sans-serif;
+      font-size: 2rem;
+      direction: rtl;
+      text-align: right;
+    }
+
+    .mv-utheemu-demo {
+      font-family: 'MV Utheemu', sans-serif;
+      font-size: 2rem;
+      direction: rtl;
+      text-align: right;
+    }
+
+    .ak-liyan-demo {
+      font-family: 'AK Liyan', sans-serif;
+      font-size: 2rem;
+      direction: rtl;
+      text-align: right;
+    }
+
+    .font-preview {
+      background: white;
+      padding: 1.5rem;
+      margin: 1rem 0;
+      border-radius: 8px;
+      border: 2px solid #e0e0e0;
+    }
+
+    .font-preview .font-label {
+      font-size: 0.85rem;
+      color: #888;
+      font-family: 'Courier New', monospace;
+      margin-bottom: 0.8rem;
+      direction: ltr;
+      text-align: left;
+    }
+
+    .font-preview .sample {
+      margin: 0.5rem 0;
+    }
+
+    .weight-example {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0.5rem 0;
+      gap: 1rem;
+    }
+
+    .weight-example .label {
+      font-size: 0.9rem;
+      color: #666;
+      min-width: 80px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1><i class="bi bi-fonts"></i> Custom Font Setup</h1>
+      <p class="subtitle">Learn how to add and use custom fonts in your web projects</p>
+    </header>
+
+    <!-- Section 1: Introduction -->
+    <div class="section">
+      <h2><i class="bi bi-book"></i> What is @font-face?</h2>
+      <p>
+        The <code>@font-face</code> CSS rule allows you to use custom fonts in your website
+        without requiring users to have them installed on their computers. You provide the
+        font files, and the browser downloads and uses them automatically.
+      </p>
+    </div>
+
+    <!-- Section 2: Setup Steps -->
+    <div class="section">
+      <h2><i class="bi bi-rocket-takeoff"></i> How to Set Up Custom Fonts</h2>
+
+      <div class="steps">
+        <ol>
+          <li>
+            <strong>Create a fonts folder:</strong><br>
+            Create a folder named <code>fonts/</code> in your project.
+          </li>
+          <li>
+            <strong>Add your font files:</strong><br>
+            Place your font files (.ttf, .otf, .woff, .woff2) in the fonts folder.
+          </li>
+          <li>
+            <strong>Create fontsetup.css:</strong><br>
+            Create a CSS file to declare your fonts using @font-face rules.
+          </li>
+          <li>
+            <strong>Link the CSS file:</strong><br>
+            Add the link to your HTML file: <code>&lt;link rel="stylesheet" href="fonts/fontsetup.css"&gt;</code>
+          </li>
+          <li>
+            <strong>Use the font:</strong><br>
+            Apply the font in your CSS: <code>font-family: 'Your Font Name';</code>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Section 3: Basic Example -->
+    <div class="section">
+      <h2><i class="bi bi-lightbulb"></i> Basic @font-face Example</h2>
+
+      <div class="code-block">
+        <div class="code-header">
+          <span class="code-dot red"></span>
+          <span class="code-dot yellow"></span>
+          <span class="code-dot green"></span>
+          <span class="code-filename">fonts/fontsetup.css</span>
+        </div>
+        <ol class="code-body">
+          <li><span class="comment">/* In your fonts/fontsetup.css file */</span></li>
+          <li>@font-face {</li>
+          <li>  <span class="property">font-family</span>: <span class="value">'My Custom Font'</span>;</li>
+          <li>  <span class="property">src</span>: <span class="value">url('MyFont-Regular.ttf')</span> format(<span class="value">'truetype'</span>);</li>
+          <li>  <span class="property">font-weight</span>: 400;</li>
+          <li>  <span class="property">font-style</span>: normal;</li>
+          <li>}</li>
+        </ol>
+      </div>
+
+      <div class="code-block">
+        <div class="code-header">
+          <span class="code-dot red"></span>
+          <span class="code-dot yellow"></span>
+          <span class="code-dot green"></span>
+          <span class="code-filename">index.html</span>
+        </div>
+        <ol class="code-body">
+          <li><span class="comment">&lt;!-- Link the font CSS in your HTML --&gt;</span></li>
+          <li>&lt;link rel="stylesheet" href="fonts/fontsetup.css"&gt;</li>
+        </ol>
+      </div>
+
+      <div class="code-block">
+        <div class="code-header">
+          <span class="code-dot red"></span>
+          <span class="code-dot yellow"></span>
+          <span class="code-dot green"></span>
+          <span class="code-filename">style.css</span>
+        </div>
+        <ol class="code-body">
+          <li><span class="comment">/* Use the font in your CSS */</span></li>
+          <li>h1 {</li>
+          <li>  <span class="property">font-family</span>: <span class="value">'My Custom Font'</span>, sans-serif;</li>
+          <li>}</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Section 4: Font Weights -->
+    <div class="section">
+      <h2><i class="bi bi-sliders"></i> Font Weights & Styles</h2>
+      <p>Use the same font-family name with different font-weight values to create a complete font family:</p>
+
+      <div class="code-block">
+        <div class="code-header">
+          <span class="code-dot red"></span>
+          <span class="code-dot yellow"></span>
+          <span class="code-dot green"></span>
+          <span class="code-filename">fonts/fontsetup.css</span>
+        </div>
+        <ol class="code-body">
+          <li><span class="comment">/* Regular */</span></li>
+          <li>@font-face {</li>
+          <li>  <span class="property">font-family</span>: <span class="value">'My Font Family'</span>;</li>
+          <li>  <span class="property">src</span>: <span class="value">url('MyFont-Regular.ttf')</span> format(<span class="value">'truetype'</span>);</li>
+          <li>  <span class="property">font-weight</span>: 400;</li>
+          <li>}</li>
+          <li></li>
+          <li><span class="comment">/* Bold */</span></li>
+          <li>@font-face {</li>
+          <li>  <span class="property">font-family</span>: <span class="value">'My Font Family'</span>;</li>
+          <li>  <span class="property">src</span>: <span class="value">url('MyFont-Bold.ttf')</span> format(<span class="value">'truetype'</span>);</li>
+          <li>  <span class="property">font-weight</span>: 700;</li>
+          <li>}</li>
+          <li></li>
+          <li><span class="comment">/* Light */</span></li>
+          <li>@font-face {</li>
+          <li>  <span class="property">font-family</span>: <span class="value">'My Font Family'</span>;</li>
+          <li>  <span class="property">src</span>: <span class="value">url('MyFont-Light.ttf')</span> format(<span class="value">'truetype'</span>);</li>
+          <li>  <span class="property">font-weight</span>: 300;</li>
+          <li>}</li>
+        </ol>
+      </div>
+
+      <h3>Common Font Weights:</h3>
+      <div class="grid">
+        <div class="card">
+          <div class="weight-demo" style="font-weight: 300;">Light</div>
+          <code>font-weight: 300</code>
+        </div>
+        <div class="card">
+          <div class="weight-demo" style="font-weight: 400;">Regular</div>
+          <code>font-weight: 400</code>
+        </div>
+        <div class="card">
+          <div class="weight-demo" style="font-weight: 700;">Bold</div>
+          <code>font-weight: 700</code>
+        </div>
+        <div class="card">
+          <div class="weight-demo" style="font-weight: 900;">Black</div>
+          <code>font-weight: 900</code>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 5: Font Formats -->
+    <div class="section">
+      <h2><i class="bi bi-file-earmark-font"></i> Font File Formats</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>.ttf</h3>
+          <p>TrueType Font</p>
+          <code>format('truetype')</code>
+        </div>
+        <div class="card">
+          <h3>.otf</h3>
+          <p>OpenType Font</p>
+          <code>format('opentype')</code>
+        </div>
+        <div class="card">
+          <h3>.woff</h3>
+          <p>Web Open Font Format</p>
+          <code>format('woff')</code>
+        </div>
+        <div class="card">
+          <h3>.woff2</h3>
+          <p>WOFF Version 2</p>
+          <code>format('woff2')</code>
+        </div>
+      </div>
+
+      <div class="note">
+        <strong><i class="bi bi-lightbulb-fill"></i> Tip:</strong> WOFF and WOFF2 formats are optimized for web use and have smaller file sizes.
+        Use them when available for better performance!
+      </div>
+    </div>
+
+    <!-- Section 6: Best Practices -->
+    <div class="section">
+      <h2><i class="bi bi-check-circle"></i> Best Practices</h2>
+
+      <div class="steps">
+        <ol>
+          <li>
+            <strong>Use meaningful font names:</strong> Choose descriptive font-family names like
+            'Roboto Web' instead of generic names.
+          </li>
+          <li>
+            <strong>Provide fallback fonts:</strong> Always include system fonts as fallbacks:<br>
+            <code>font-family: 'My Custom Font', Arial, sans-serif;</code>
+          </li>
+          <li>
+            <strong>Optimize file sizes:</strong> Use WOFF2 format when possible for smaller file sizes.
+          </li>
+          <li>
+            <strong>Check font licenses:</strong> Make sure you have the right to use the font on your website.
+          </li>
+          <li>
+            <strong>Test across browsers:</strong> Test your custom fonts in different browsers to ensure compatibility.
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Section 7: Real World Example -->
+    <div class="section">
+      <h2><i class="bi bi-globe"></i> Real World Example</h2>
+      <p>This is how fonts are set up in the <strong>certificateGen</strong> project:</p>
+
+      <div class="code-block">
+        <div class="code-header">
+          <span class="code-dot red"></span>
+          <span class="code-dot yellow"></span>
+          <span class="code-dot green"></span>
+          <span class="code-filename">certificateGen/fonts/fontsetup.css</span>
+        </div>
+        <ol class="code-body">
+          <li><span class="comment">/* In certificateGen/fonts/fontsetup.css */</span></li>
+          <li></li>
+          <li>@font-face {</li>
+          <li>  <span class="property">font-family</span>: <span class="value">'AK Veli Web'</span>;</li>
+          <li>  <span class="property">src</span>: <span class="value">url('AKVeli-Regular.otf')</span> format(<span class="value">'opentype'</span>);</li>
+          <li>  <span class="property">font-weight</span>: 400;</li>
+          <li>}</li>
+          <li></li>
+          <li>@font-face {</li>
+          <li>  <span class="property">font-family</span>: <span class="value">'AK Veli Web'</span>;</li>
+          <li>  <span class="property">src</span>: <span class="value">url('AKVeli-Bold.otf')</span> format(<span class="value">'opentype'</span>);</li>
+          <li>  <span class="property">font-weight</span>: 700;</li>
+          <li>}</li>
+          <li></li>
+          <li>@font-face {</li>
+          <li>  <span class="property">font-family</span>: <span class="value">'Dhivehi Web'</span>;</li>
+          <li>  <span class="property">src</span>: <span class="value">url('Dhivehi.ttf')</span> format(<span class="value">'truetype'</span>);</li>
+          <li>}</li>
+        </ol>
+      </div>
+
+      <div class="note">
+        <strong><i class="bi bi-pencil-square"></i> Note:</strong> Check the <code>certificateGen/fonts/fontsetup.css</code> file
+        to see a complete example with multiple fonts and weights.
+      </div>
+    </div>
+
+    <!-- Section 8: Dhivehi Fonts Demo -->
+    <div class="section">
+      <h2><i class="bi bi-translate"></i> Dhivehi Fonts Demonstration</h2>
+      <p>This demo includes actual Dhivehi fonts ready to use. All fonts are declared in <code>fonts/fontsetup.css</code> and work immediately!</p>
+
+      <div class="note">
+        <strong><i class="bi bi-info-circle"></i> Pangram:</strong> The sample text is the Dhivehi equivalent of "The quick brown fox jumps over the lazy dog" — loaded from <code>assets/data.json</code>.
+      </div>
+
+      <!-- Dhivehi Web Font -->
+      <div class="font-preview">
+        <div class="font-label">font-family: 'Dhivehi Web'</div>
+        <div class="dhivehi-demo sample" data-font-sample></div>
+      </div>
+
+      <!-- MV Utheemu Font -->
+      <div class="font-preview">
+        <div class="font-label">font-family: 'MV Utheemu'</div>
+        <div class="weight-example">
+          <span class="label">Regular (400):</span>
+          <div class="mv-utheemu-demo sample" style="font-weight: 400;" data-font-sample></div>
+        </div>
+        <div class="weight-example">
+          <span class="label">Bold (700):</span>
+          <div class="mv-utheemu-demo sample" style="font-weight: 700;" data-font-sample></div>
+        </div>
+      </div>
+
+      <!-- AK Liyan Font -->
+      <div class="font-preview">
+        <div class="font-label">font-family: 'AK Liyan'</div>
+        <div class="weight-example">
+          <span class="label">Regular (400):</span>
+          <div class="ak-liyan-demo sample" style="font-weight: 400;" data-font-sample></div>
+        </div>
+        <div class="weight-example">
+          <span class="label">Bold (700):</span>
+          <div class="ak-liyan-demo sample" style="font-weight: 700;" data-font-sample></div>
+        </div>
+      </div>
+
+      <h3>Loading Sample Text from JSON</h3>
+      <p>The preview text above is loaded at page load from <code>assets/data.json</code> using <code>fetch()</code>:</p>
+
+      <div class="note">
+        <strong><i class="bi bi-info-circle"></i> Important:</strong> <code>fetch()</code> requires a local server — use VS Code Live Server or <code>python3 -m http.server</code>. Opening the file directly in a browser (<code>file://</code>) will not load the JSON.
+      </div>
+
+      <div class="code-block">
+        <div class="code-header">
+          <span class="code-dot red"></span>
+          <span class="code-dot yellow"></span>
+          <span class="code-dot green"></span>
+          <span class="code-filename">assets/data.json</span>
+        </div>
+        <ol class="code-body">
+          <li>{</li>
+          <li>  <span class="property">"pangram"</span>: <span class="value">"ބ... (full Dhivehi pangram)"</span>,</li>
+          <li>  <span class="property">"eng"</span>: <span class="value">"The quick brown fox jumps over the lazy dog"</span></li>
+          <li>}</li>
+        </ol>
+      </div>
+
+      <div class="code-block">
+        <div class="code-header">
+          <span class="code-dot red"></span>
+          <span class="code-dot yellow"></span>
+          <span class="code-dot green"></span>
+          <span class="code-filename">index.html — &lt;script&gt;</span>
+        </div>
+        <ol class="code-body">
+          <li>fetch(<span class="value">'assets/data.json'</span>)</li>
+          <li>  .then(res => res.json())</li>
+          <li>  .then(data => {</li>
+          <li>    document.querySelectorAll(<span class="value">'[data-font-sample]'</span>).forEach(el => {</li>
+          <li>      el.textContent = data.pangram;</li>
+          <li>    });</li>
+          <li>  });</li>
+        </ol>
+      </div>
+
+      <div class="code-block">
+        <div class="code-header">
+          <span class="code-dot red"></span>
+          <span class="code-dot yellow"></span>
+          <span class="code-dot green"></span>
+          <span class="code-filename">style.css</span>
+        </div>
+        <ol class="code-body">
+          <li><span class="comment">/* Using Dhivehi fonts in your CSS */</span></li>
+          <li></li>
+          <li><span class="comment">/* Basic usage */</span></li>
+          <li>.dhivehi-text {</li>
+          <li>  <span class="property">font-family</span>: <span class="value">'Dhivehi Web'</span>, sans-serif;</li>
+          <li>  <span class="property">direction</span>: <span class="value">rtl</span>;</li>
+          <li>  <span class="property">text-align</span>: <span class="value">right</span>;</li>
+          <li>}</li>
+          <li></li>
+          <li><span class="comment">/* With font weights */</span></li>
+          <li>.dhivehi-heading {</li>
+          <li>  <span class="property">font-family</span>: <span class="value">'MV Utheemu'</span>, sans-serif;</li>
+          <li>  <span class="property">font-weight</span>: 700;</li>
+          <li>  <span class="property">direction</span>: <span class="value">rtl</span>;</li>
+          <li>}</li>
+        </ol>
+      </div>
+
+      <div class="code-block">
+        <div class="code-header">
+          <span class="code-dot red"></span>
+          <span class="code-dot yellow"></span>
+          <span class="code-dot green"></span>
+          <span class="code-filename">index.html</span>
+        </div>
+        <ol class="code-body">
+          <li><span class="comment">&lt;!-- HTML Example --&gt;</span></li>
+          <li>&lt;p class="dhivehi-text"&gt;</li>
+          <li>ތާނައިން ލިޔުނީމާ ފެންނަގޮތް</li>
+          <li>&lt;/p&gt;</li>
+          <li></li>
+          <li>&lt;h1 class="dhivehi-heading"&gt;</li>
+          <li>ވެބްސައިޓުތަށް ތާނައިން ފަރުމާކުރުން</li>
+          <li>&lt;/h1&gt;</li>
+        </ol>
+      </div>
+
+      <div class="note">
+        <strong><i class="bi bi-lightbulb-fill"></i> Tip:</strong> For Dhivehi/Arabic text, always use <code>direction: rtl;</code> and <code>text-align: right;</code> in your CSS for proper text rendering.
+      </div>
+    </div>
+
+    <!-- Section 9: Try It Out -->
+    <div class="section">
+      <h2><i class="bi bi-play-circle"></i> Try It Out!</h2>
+
+      <h3>Using VS Code Live Server</h3>
+      <p>The easiest way to test this demo is with VS Code's Live Server extension:</p>
+      <div class="steps">
+        <ol>
+          <li>Install the <strong>Live Server</strong> extension in VS Code (by Ritwick Dey)</li>
+          <li>Right-click on <code>index.html</code> in the file explorer</li>
+          <li>Select <strong>"Open with Live Server"</strong></li>
+          <li>The page will open in your browser with auto-reload on save!</li>
+        </ol>
+      </div>
+
+      <h3>Adding Your Own Fonts</h3>
+      <div class="steps">
+        <ol>
+          <li>Add your font files to the <code>fonts/</code> folder</li>
+          <li>Open <code>fonts/fontsetup.css</code></li>
+          <li>Add your @font-face declarations (follow the examples in the file)</li>
+          <li>Use the font in this page by adding CSS classes</li>
+          <li>Save and watch Live Server auto-reload!</li>
+        </ol>
+      </div>
+
+      <h3>Dhivehi Fonts Already Included</h3>
+      <p>This demo already includes 3 Dhivehi fonts ready to use:</p>
+      <ul style="margin-left: 2rem; line-height: 2;">
+        <li><code>font-family: 'Dhivehi Web';</code></li>
+        <li><code>font-family: 'MV Utheemu';</code> (Regular & Bold)</li>
+        <li><code>font-family: 'AK Liyan';</code> (Regular & Bold)</li>
+      </ul>
+    </div>
+
+    <footer>
+      <p><strong>Code the Web</strong> - Custom Font Setup Demo</p>
+      <p>Made by Sumeyku Academy</p>
+    </footer>
+  </div>
+
+  <script>
+    fetch('assets/data.json')
+      .then(res => res.json())
+      .then(data => {
+        document.querySelectorAll('[data-font-sample]').forEach(el => {
+          el.textContent = data.pangram;
+        });
+      });
+  </script>
+</body>
+</html>

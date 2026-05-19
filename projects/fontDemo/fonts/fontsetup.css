@@ -1,0 +1,183 @@
+/* ============================================
+   CUSTOM FONT SETUP GUIDE
+   ============================================
+
+   This file demonstrates how to add custom fonts to your web project.
+
+   STEPS TO ADD CUSTOM FONTS:
+   1. Place your font files (.ttf, .otf, .woff, .woff2) in this fonts/ folder
+   2. Use @font-face to declare each font below
+   3. Link this CSS file in your HTML: <link rel="stylesheet" href="fonts/fontsetup.css">
+   4. Use the font in your CSS: font-family: 'Your Font Name';
+
+   ============================================ */
+
+/* ============================================
+   EXAMPLE 1: Single Font File
+   ============================================ */
+/*
+@font-face {
+  font-family: 'My Custom Font';
+  src: url('MyFont-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+*/
+
+/* ============================================
+   EXAMPLE 2: Font Family with Multiple Weights
+   ============================================
+
+   Use the SAME font-family name but different font-weight values
+   to create a complete font family.
+*/
+
+/* Regular (400) */
+/*
+@font-face {
+  font-family: 'My Font Family';
+  src: url('MyFont-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+*/
+
+/* Bold (700) */
+/*
+@font-face {
+  font-family: 'My Font Family';
+  src: url('MyFont-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+*/
+
+/* Light (300) */
+/*
+@font-face {
+  font-family: 'My Font Family';
+  src: url('MyFont-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+*/
+
+/* ============================================
+   EXAMPLE 3: Font with Italic Styles
+   ============================================ */
+/*
+@font-face {
+  font-family: 'My Styled Font';
+  src: url('MyFont-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'My Styled Font';
+  src: url('MyFont-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+*/
+
+/* ============================================
+   FONT FORMAT REFERENCE
+   ============================================
+
+   File Extension  →  Format Value
+   ────────────────────────────────
+   .ttf            →  format('truetype')
+   .otf            →  format('opentype')
+   .woff           →  format('woff')
+   .woff2          →  format('woff2')
+
+   ============================================ */
+
+/* ============================================
+   FONT WEIGHT REFERENCE
+   ============================================
+
+   Name           →  Value
+   ────────────────────────
+   Thin           →  100
+   Extra Light    →  200
+   Light          →  300
+   Regular/Normal →  400
+   Medium         →  500
+   Semi Bold      →  600
+   Bold           →  700
+   Extra Bold     →  800
+   Black          →  900
+
+   ============================================ */
+
+/* ============================================
+   DEMO FONTS (Uncomment to use)
+   ============================================ */
+
+/* Example: Using Google Fonts locally */
+/*
+@font-face {
+  font-family: 'Roboto Local';
+  src: url('Roboto-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Roboto Local';
+  src: url('Roboto-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+*/
+
+/* ============================================
+   YOUR CUSTOM FONTS
+   ============================================
+
+   Add your @font-face declarations below:
+*/
+
+/* ============================================
+   DHIVEHI FONTS (Ready to Use)
+   ============================================ */
+
+/* Dhivehi - Basic Dhivehi font */
+@font-face {
+  font-family: 'Dhivehi Web';
+  src: url('Dhivehi.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* MV Utheemu - Regular */
+@font-face {
+  font-family: 'MV Utheemu';
+  src: url('mvutheemuREGULAR.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* MV Utheemu - Bold */
+@font-face {
+  font-family: 'MV Utheemu';
+  src: url('mvutheemuBOLD.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* AK Liyan - Regular */
+@font-face {
+  font-family: 'AK Liyan';
+  src: url('AK Liyan.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* AK Liyan - Bold */
+@font-face {
+  font-family: 'AK Liyan';
+  src: url('AK Liyan Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
